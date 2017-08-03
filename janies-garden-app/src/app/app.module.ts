@@ -17,15 +17,15 @@ import { SignupComponent } from './signup/signup.component';
   imports: [
     BrowserModule,
     RouterModule.forRoot([
-    {
-        path: 'signin',
-        component: SigninComponent
-    },
-    {
-      path: 'signup',
-      component: SignupComponent
-    }
-  ])  
+      {
+         path: 'signin',
+         component: SigninComponent
+      },
+      {
+        path: 'signup',
+        component: SignupComponent
+      }
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
