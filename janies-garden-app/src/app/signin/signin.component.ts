@@ -8,11 +8,6 @@ import { Component } from '@angular/core';
 
 export class SigninComponent {
 
-  constructor(
-  	public email: string,
-  	public password: string
-  	) { }
-  ngOnInit() {
-  }
+  constructor() { }
 
 }
