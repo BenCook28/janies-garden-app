@@ -4,7 +4,7 @@ import { FirebaseService } from '../services/auth.service';
 import { User } from '../models/user'
 
 @Component({
-  selector: 'app-signup',
+  selector: 'signup',
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css']
 })
@@ -16,7 +16,7 @@ export class SignupComponent {
 	user: User; //User that we will send to the database
   fbs: FirebaseService;
   
-  	validate(){
+  validate(){
 		this.errors = {email: "", pass: "", confpass: ""};
 		if(!this.model.email)
 			this.errors.email="Please provide an email";

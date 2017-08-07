@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule }   from '@angular/forms';
 import { RouterModule }   from '@angular/router';
 import { NgModule } from '@angular/core';
 
@@ -39,6 +40,7 @@ export const firebaseConfig = {
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     BrowserModule,
+    FormsModule,
     RouterModule.forRoot([
       {
          path: 'signin',

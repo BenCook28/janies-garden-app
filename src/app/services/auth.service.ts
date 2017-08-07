@@ -10,9 +10,11 @@ export class FirebaseService{
 	authState;
 
 	signup(user: User){
+		console.log(user);
 		this.af.auth.createUserWithEmailAndPassword(user.email,user.password)
-		.then(() => {
-			this.router.navigateByUrl('/myprofile');
+		.then((d) => {
+			console.log(d);
+			this.router.navigateByUrl('/');
 		})
 		.catch((e) => {
 			console.log(e);
@@ -21,7 +23,7 @@ export class FirebaseService{
 	signin(user: User){
 		this.af.auth.signInWithEmailAndPassword(user.email, user.password)
 		.then(() => {
-			this.router.navigateByUrl('/myprofile');
+			this.router.navigateByUrl('/');
 		})
 		.catch((e) => {
 			console.log(e);
@@ -30,13 +32,14 @@ export class FirebaseService{
 	signout(){
 		this.af.auth.signOut()
 		.then(() => {
-			this.router.navigateByUrl('/');
+			this.router.navigateByUrl('/signin');
 		})
 		.catch((e) => {
 			console.log(e);
 		})
 	}
 	isAuthed(){
+		console.log(this.authState);
 		return !!this.authState;
 	}
 	constructor(private af: AngularFireAuth, private router: Router){
