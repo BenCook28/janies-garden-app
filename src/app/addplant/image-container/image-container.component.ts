@@ -1,18 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+// import { Component, OnInit } from '@angular/core';
+// import { FileUploaderModule } from '@uniprank/ngx-file-uploader';
 
-@Component({
-  selector: 'app-image-container',
-  templateUrl: './image-container.component.html',
-  styleUrls: ['./image-container.component.css']
-})
-export class ImageContainerComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
-}
+// @Component({
+//   selector: 'app-image-container',
+//   templateUrl: './image-container.component.html',
+//   styleUrls: ['./image-container.component.css']
+// })
 
 // @Component({
 //     selector: 'app-image-container',
@@ -38,3 +31,13 @@ export class ImageContainerComponent implements OnInit {
 //         reader.readAsDataURL(event.target.files[0]);
 //     }
 // }
+
+// export class ImageContainerComponent implements OnInit {
+
+//   constructor() { }
+
+//   ngOnInit() {
+//   }
+
+// }
+

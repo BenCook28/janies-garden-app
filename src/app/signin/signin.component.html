@@ -1,17 +1,19 @@
-<div class="container">
+<div class="col-sm-4 col-sm-offset-4">
     <h1>Sign In</h1>
-    <form>
+    <form (ngSubmit)="onSubmit()" #signinForm="ngForm">
       <div class="form-group">
-        <label for="name">Email</label>
-        <input type="email" class="form-control" id="email" required [(ngModel)] = "model.email" name="email">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="email" name="email" [(ngModel)] = "model.email">
+        <p *ngIf="errors.email" class="validation">{{errors.email}}</p>
       </div>
  
       <div class="form-group">
         <label for="password">Password</label>
-        <input type="password" class="form-control" id="password" required [(ngModel)] = "model.password" name="password">
+        <input type="password" class="form-control" id="pass" name="pass" [(ngModel)] = "model.pass">
+        <p *ngIf="errors.pass" class="validation">{{errors.pass}}</p>
       </div>
- 
-      <button type="submit" class="btn btn-success">Submit</button>
+          <p *ngIf="errors.email" class="validation">{{errors.email}}</p>
+      <button type="submit" class="btn btn-success">Sign In</button>
  	    <!-- <a [signupLink]="['/signup']" class="btn btn-link">No account? Signup</a> -->
     </form>
 </div>

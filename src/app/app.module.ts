@@ -11,8 +11,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { SigninComponent } from './signin/signin.component';
 import { SignupComponent } from './signup/signup.component';
 import { AddPlantComponent } from './addplant/addplant.component';
-import { ImageContainerComponent } from './addplant/image-container/image-container.component';
-import { FileUploaderModule } from '@uniprank/ngx-file-uploader';
+// import { ImageContainerComponent } from './addplant/image-container/image-container.component';
+// import { FileUploaderModule } from '@uniprank/ngx-file-uploader';
 
 import { FirebaseService } from './services/auth.service';
 import { PlantsService } from './services/plants.service';
@@ -21,6 +21,9 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { HttpClientModule } from '@angular/common/http';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { SplashComponent } from './splash/splash.component';
+import { MyGardenComponent } from './my-garden/my-garden.component';
+
+import { routes } from './services/routes';
 
 export const firebaseConfig = {
     apiKey: "AIzaSyCITF5P0jG-DokP636CZqQj0e3HpYIF3s0",
@@ -39,10 +42,13 @@ export const firebaseConfig = {
     SignupComponent,
     AddPlantComponent,
     ImageContainerComponent,
-    SplashComponent
+    SplashComponent,
+    MyGardenComponent
+    // ImageContainerComponent/*,*/
+    // FileUploaderModule
   ],
   imports: [
-    FileUploaderModule,
+    // FileUploaderModule,
     HttpClientModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
@@ -67,6 +73,7 @@ export const firebaseConfig = {
         component: AddPlantComponent
       }
     ])
+    RouterModule.forRoot(routes)
     // AngularFireModule.initializeApp(firebaseConfig)
   ],
   providers: [
