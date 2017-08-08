@@ -11,7 +11,7 @@ export class FirebaseService{
 
 	signup(user: User){
 		console.log(user);
-		this.af.auth.createUserWithEmailAndPassword(user.email,user.password)
+		this.af.auth.createUserWithEmailAndPassword(user.email,user.pass)
 		.then((d) => {
 			console.log('yo');
 			this.router.navigateByUrl('/addplant');
@@ -21,10 +21,10 @@ export class FirebaseService{
 		})
 	}
 	signin(user: User){
-		this.af.auth.signInWithEmailAndPassword(user.email, user.password)
+		this.af.auth.signInWithEmailAndPassword(user.email, user.pass)
 		.then(() => {
 			console.log('yo');
-			this.router.navigateByUrl('/addplant');
+			this.router.navigateByUrl('/my-garden');
 		})
 		.catch((e) => {
 			console.log(e);

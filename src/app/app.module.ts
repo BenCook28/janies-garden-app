@@ -20,6 +20,9 @@ import { PlantsService } from './services/plants.service';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { HttpClientModule } from '@angular/common/http';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { MyGardenComponent } from './my-garden/my-garden.component';
+
+import { routes } from './services/routes';
 
 export const firebaseConfig = {
     apiKey: "AIzaSyCITF5P0jG-DokP636CZqQj0e3HpYIF3s0",
@@ -36,7 +39,8 @@ export const firebaseConfig = {
     NavbarComponent,
     SigninComponent,
     SignupComponent,
-    AddPlantComponent
+    AddPlantComponent,
+    MyGardenComponent
     // ImageContainerComponent/*,*/
     // FileUploaderModule
   ],
@@ -48,20 +52,7 @@ export const firebaseConfig = {
     AngularFireAuthModule,
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot([
-      {
-         path: 'signin',
-         component: SigninComponent
-      },
-      {
-        path: 'signup',
-        component: SignupComponent
-      },
-      {
-        path: 'addplant',
-        component: AddPlantComponent
-      }
-    ])
+    RouterModule.forRoot(routes)
     // AngularFireModule.initializeApp(firebaseConfig)
   ],
   providers: [
