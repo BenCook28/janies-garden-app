@@ -39,6 +39,15 @@ export class FirebaseService{
 			console.log(e);
 		})
 	}
+	// splash(){
+	// 	this.af.auth.splash()
+	// 	.then(() => {
+	// 		this.router.navigateByUrl('/splash');
+	// 	})
+	// 	.catch((e) => {
+	// 		console.log(e);
+	// 	})
+	// }
 	isAuthed(){
 		console.log(this.authState);
 		return !!this.authState;

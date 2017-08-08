@@ -20,6 +20,7 @@ import { PlantsService } from './services/plants.service';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { HttpClientModule } from '@angular/common/http';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { SplashComponent } from './splash/splash.component';
 import { MyGardenComponent } from './my-garden/my-garden.component';
 
 import { routes } from './services/routes';
@@ -40,6 +41,8 @@ export const firebaseConfig = {
     SigninComponent,
     SignupComponent,
     AddPlantComponent,
+    ImageContainerComponent,
+    SplashComponent,
     MyGardenComponent
     // ImageContainerComponent/*,*/
     // FileUploaderModule
@@ -52,6 +55,24 @@ export const firebaseConfig = {
     AngularFireAuthModule,
     BrowserModule,
     FormsModule,
+    RouterModule.forRoot([
+      {
+         path: 'signin',
+         component: SigninComponent
+      },
+      {
+        path: 'signup',
+        component: SignupComponent
+      },
+      {
+        path: 'splash',
+        component: SplashComponent
+      },      
+      {
+        path: 'addplant',
+        component: AddPlantComponent
+      }
+    ])
     RouterModule.forRoot(routes)
     // AngularFireModule.initializeApp(firebaseConfig)
   ],
