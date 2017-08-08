@@ -41,7 +41,6 @@ export const firebaseConfig = {
     SigninComponent,
     SignupComponent,
     AddPlantComponent,
-    ImageContainerComponent,
     SplashComponent,
     MyGardenComponent
     // ImageContainerComponent/*,*/
@@ -72,7 +71,7 @@ export const firebaseConfig = {
         path: 'addplant',
         component: AddPlantComponent
       }
-    ])
+    ]),
     RouterModule.forRoot(routes)
     // AngularFireModule.initializeApp(firebaseConfig)
   ],
