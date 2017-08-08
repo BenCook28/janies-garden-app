@@ -20,6 +20,7 @@ import { PlantsService } from './services/plants.service';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { HttpClientModule } from '@angular/common/http';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { SplashComponent } from './splash/splash.component';
 
 export const firebaseConfig = {
     apiKey: "AIzaSyCITF5P0jG-DokP636CZqQj0e3HpYIF3s0",
@@ -37,8 +38,8 @@ export const firebaseConfig = {
     SigninComponent,
     SignupComponent,
     AddPlantComponent,
-    ImageContainerComponent/*,*/
-    // FileUploaderModule
+    ImageContainerComponent,
+    SplashComponent
   ],
   imports: [
     FileUploaderModule,
@@ -57,6 +58,10 @@ export const firebaseConfig = {
         path: 'signup',
         component: SignupComponent
       },
+      {
+        path: 'splash',
+        component: SplashComponent
+      },      
       {
         path: 'addplant',
         component: AddPlantComponent
