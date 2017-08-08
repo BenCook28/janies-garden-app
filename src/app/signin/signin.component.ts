@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FirebaseService } from '../services/auth.service';
+
+import { User } from '../models/user';
 
 @Component({
   selector: 'signin',
@@ -8,6 +11,30 @@ import { Component } from '@angular/core';
 
 export class SigninComponent {
 
-  constructor() { }
+  public errors = {email: "", pass: ""};
+  model = {email: "", pass: ""};
+  user: User;
+  fbs: FirebaseService;
+
+    validate(){
+  	this.errors = {email: "", pass: ""};
+  	if(!this.model.email)
+  		this.errors.email="Please provide a valid email";
+  	if(!this.model.pass)
+  		this.errors.pass="Please provide a valid password";
+  	
+  	return(this.errors.email || this.errors.pass);
+
+    }
+    onSubmit(){
+  	if(this.validate()){
+  		return;
+  	}
+  	this.user = new User(this.model.email,this.model.pass);
+  	this.fbs.signin(this.user);
+  }
+  constructor(private firebase: FirebaseService) {
+    this.fbs = firebase;
+   }
 
 }
