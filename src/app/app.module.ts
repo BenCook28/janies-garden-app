@@ -15,8 +15,8 @@ import { AddPlantComponent } from './addplant/addplant.component';
 // import { FileUploaderModule } from '@uniprank/ngx-file-uploader';
 
 import { FirebaseService } from './services/auth.service';
-
-
+import { PlantsService } from './services/plants.service';
+// New imports to update based on AngularFire2 version 4
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { HttpClientModule } from '@angular/common/http';
 import { AngularFireAuthModule } from 'angularfire2/auth';
@@ -66,7 +66,8 @@ export const firebaseConfig = {
   ],
   providers: [
     FirebaseService,
-    AngularFireAuth
+    AngularFireAuth,
+    PlantsService
   ],
   bootstrap: [AppComponent]
 })
