@@ -28,8 +28,10 @@ export class SigninComponent {
     }
     onSubmit(){
   	if(this.validate()){
+      console.log('hi');
   		return;
   	}
+    console.log('hello');
   	this.user = new User(this.model.email,this.model.pass);
   	this.fbs.signin(this.user);
   }

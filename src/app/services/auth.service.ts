@@ -13,8 +13,8 @@ export class FirebaseService{
 		console.log(user);
 		this.af.auth.createUserWithEmailAndPassword(user.email,user.password)
 		.then((d) => {
-			console.log(d);
-			this.router.navigateByUrl('/');
+			console.log('yo');
+			this.router.navigateByUrl('/addplant');
 		})
 		.catch((e) => {
 			console.log(e);
@@ -23,7 +23,8 @@ export class FirebaseService{
 	signin(user: User){
 		this.af.auth.signInWithEmailAndPassword(user.email, user.password)
 		.then(() => {
-			this.router.navigateByUrl('/');
+			console.log('yo');
+			this.router.navigateByUrl('/addplant');
 		})
 		.catch((e) => {
 			console.log(e);
