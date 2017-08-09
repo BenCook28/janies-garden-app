@@ -1,9 +1,12 @@
 <div class="container">
     <h1>Sign Up</h1>
+<!--     ngSubmit defines which function in the controller to be called -->
     <form (ngSubmit)="onSubmit()" #signupForm="ngForm">
       <div class="form-group">
         <label for="name">Email</label>
+<!--         ngModel is two way data binding that allows the view to change data in the controller and vice versa -->
         <input type="email" class="form-control" id="email" [(ngModel)] = "model.email" name="email">
+<!--         ngIf determines if the error exists, and if it does, displays an error -->
         <p *ngIf="errors.email" class="validation">{{errors.email}}</p>
       </div>
  

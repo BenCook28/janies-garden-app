@@ -17,6 +17,7 @@ export const routes = [
       	path: 'splash',
         component: SplashComponent
       },
+      {
         path: 'my-garden',
         component: MyGardenComponent
       },
