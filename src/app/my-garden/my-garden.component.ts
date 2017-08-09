@@ -10,22 +10,28 @@ import { Plant } from '../models/plants'
   styleUrls: ['./my-garden.component.css']
 })
 export class MyGardenComponent implements OnInit {
-  plant = this.plant;
+  // plant = this.plant;
+  modelPlant = new Plant("","","","","","","","","","","");
+  activeId = 1;
 
   onClick(){
 			this.router.navigateByUrl('/addplant');
-        }
-  constructor(private route: ActivatedRoute, private router: Router, private ps: PlantsService) {
-    // this.route.params.subscribe((params) {
-    //     this.ps.getUserInfo(params.id).then((prof) => {
-    //     this.modelProfile = new Profile(prof.username, prof.name, prof.gender, prof.about, prof.hobbies, prof.age, prof.langs, prof.prefgender);
-    //     this.hobbies = prof.hobbies;
-    //     this.langs = prof.langs;
-    //   })
-    // })
-   }
+  }
 
   ngOnInit() {
   }
 
+  change(id: number){
+
+  }
+
+  constructor(private route: ActivatedRoute, private router: Router, private ps: PlantsService) {
+    this.route.params.subscribe((params) => {
+        this.ps.getPlantInfo().then((prof) => {
+          // this.modelPlant = new Plant(prof.common, prof.scientific, prof.imgurl, prof.water, prof.sun, prof.planted, prof.bloomed,
+          // prof.location, prof.height, prof.width, prof.native);
+        console.log(prof);
+      })
+    })
+   }
 }

@@ -12,8 +12,8 @@ export class MyGardenService{
 		this.afd.database.ref('plant/' + p.common).set(p)
 	}
 	
+
         constructor(private afd: AngularFireDatabase, private route: ActivatedRoute, private router: Router){
-			this.route.params.subscribe((params) => {
-        	this.plant.getUserInfo(params.id).then((prof) => {
 		}
 	}
+	
