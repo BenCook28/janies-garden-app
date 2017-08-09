@@ -1,3 +1,9 @@
 .btn {
 	border-color: #3F4B3D;
+	width: 10em;
+	height: 3.5em;
+}
+
+li, a {
+	color: #3F4B3D !important;
 }
