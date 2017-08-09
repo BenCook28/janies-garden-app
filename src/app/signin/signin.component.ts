@@ -6,6 +6,7 @@ import { User } from '../models/user';
 @Component({
   selector: 'signin',
   templateUrl: './signin.component.html',
+    // (ngSubmit)="onSubmit",
   styleUrls: ['./signin.component.css']
 })
 
@@ -16,7 +17,7 @@ export class SigninComponent {
   user: User;
   fbs: FirebaseService;
 
-    validate(){
+  validate(){
   	this.errors = {email: "", pass: ""};
   	if(!this.model.email)
   		this.errors.email="Please provide a valid email";
@@ -26,10 +27,13 @@ export class SigninComponent {
   	return(this.errors.email || this.errors.pass);
 
     }
-    onSubmit(){
+  
+   onSubmit(){
   	if(this.validate()){
+      console.log('hi');
   		return;
   	}
+    console.log('hello');
   	this.user = new User(this.model.email,this.model.pass);
   	this.fbs.signin(this.user);
   }
