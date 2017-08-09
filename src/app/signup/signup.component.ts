@@ -11,13 +11,12 @@ import { User } from '../models/user'
 
 //TODO: Add the firebase rejections to validate
 export class SignupComponent {
-	public errors = {email: "", pass: "", confpass: ""}; //This one is public so that angular can access it
-	model = {email: "", pass: "", confpass: ""}; //Model that angular will store data in
+	public errors: any = {}; //This one is public so that angular can access it
+	model: any = {}; //Model that angular will store data in
 	user: User; //User that we will send to the database
-  fbs: FirebaseService;
   
   validate(){
-		this.errors = {email: "", pass: "", confpass: ""};
+		this.errors = {};
 		if(!this.model.email)
 			this.errors.email="Please provide an email";
 		if(!this.model.pass)
@@ -28,19 +27,16 @@ export class SignupComponent {
 			this.errors.confpass="Passwords must match";
 		return(this.errors.email || this.errors.pass || this.errors.confpass); //Returns true if there are errors
 	}
-
+//Method that gets called when the form is submitted
   onSubmit(){
 		if(this.validate()){//If there are errors, do not submit the form
 			return;
 		}
-		this.user = new User(this.model.email, this.model.pass); //Create a new user object with the model email and password
-		console.log(this.user);
-		//Pass the user to the db here
-		this.fbs.signup(this.user);
-		console.log(this.fbs.isAuthed());
+		//Create new User object to contain the data
+		this.user = new User(this.model.email, this.model.pass); //Create a new user object with the model email and password		//Pass the user to the db here
+		//Send the user to the auth service signup function
+		this.firebase.signup(this.user);
 	}
 
-  constructor(private firebase: FirebaseService) {
-    this.fbs = firebase;
-   }
+  constructor(private firebase: FirebaseService) {}
 }
