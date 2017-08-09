@@ -14,7 +14,7 @@ export class AddPlantComponent {
 	model: any = {};
 
 	onSubmit(){
-		console.log(this.model);
+		//Wrap the data in the model into a nice plant object
 		var plant = new Plant(
 			this.model.common,
 			this.model.scientific,
@@ -28,7 +28,7 @@ export class AddPlantComponent {
 			this.model.width,
 			this.model.native
 			)
-		console.log(plant);
+		//We pass the plant object into our plants service
 		this.ps.createPlant(plant);
 	}
 
