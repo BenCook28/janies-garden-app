@@ -6,24 +6,24 @@ import { AngularFireAuth } from 'angularfire2/auth';
 
 @Injectable()
 export class FirebaseService{
-	fbs = this;
 	authState;
 
 	signup(user: User){
-		console.log(user);
-		this.af.auth.createUserWithEmailAndPassword(user.email,user.password)
-		.then((d) => {
-			console.log(d);
-			this.router.navigateByUrl('/');
+		//Creating a new user using firebase authentication
+		this.af.auth.createUserWithEmailAndPassword(user.email,user.pass)
+		.then(() => {
+			//Promise that gets fulfilled when the request is completed
+			this.router.navigateByUrl('/addplant');
 		})
-		.catch((e) => {
-			console.log(e);
+		.catch((error) => {
+			//Catches any errors that might pop up
+			console.log(error);
 		})
 	}
 	signin(user: User){
-		this.af.auth.signInWithEmailAndPassword(user.email, user.password)
+		this.af.auth.signInWithEmailAndPassword(user.email, user.pass)
 		.then(() => {
-			this.router.navigateByUrl('/');
+			this.router.navigateByUrl('/my-garden');
 		})
 		.catch((e) => {
 			console.log(e);
@@ -39,11 +39,16 @@ export class FirebaseService{
 		})
 	}
 	isAuthed(){
-		console.log(this.authState);
+		//Return the boolean value of the authstate
+		//false->true->false
+		//true->false->true
+		//null->true->false
+		//something->false->true
 		return !!this.authState;
 	}
 	constructor(private af: AngularFireAuth, private router: Router){
 		this.af.authState.subscribe((authState) => {
+			//Set our authstate to be that of firebase's
 			this.authState = authState
 		})
 	}
