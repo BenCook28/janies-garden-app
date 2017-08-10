@@ -14,5 +14,14 @@ export class PlantsService {
 		//.catch
 			//print out the error
 	}
+
+updatePlant(plant: Plant) {
+		this.afd.database.ref("plants/" + plant.common).update(plant);
+		//.then
+			//navigate to the url
+		//.catch
+			//print out the error
+	}
+	
 	constructor(private afd: AngularFireDatabase, private router: Router){}
 }
