@@ -13,6 +13,7 @@ export class MyGardenComponent implements OnInit {
   // plant = this.plant;
   modelPlant = new Plant("","","","","","","","","","","");
   activeId = 1;
+  plants = {};
 
   onClick(){
 			this.router.navigateByUrl('/addplant');
@@ -28,6 +29,7 @@ export class MyGardenComponent implements OnInit {
   constructor(private route: ActivatedRoute, private router: Router, private ps: PlantsService) {
     this.route.params.subscribe((params) => {
         this.ps.getPlantInfo().then((prof) => {
+          this.plants = prof;
           // this.modelPlant = new Plant(prof.common, prof.scientific, prof.imgurl, prof.water, prof.sun, prof.planted, prof.bloomed,
           // prof.location, prof.height, prof.width, prof.native);
         console.log(prof);
