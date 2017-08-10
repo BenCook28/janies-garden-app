@@ -21,7 +21,7 @@ export class PlantsService {
             //print out the error
     }
 
-updatePlant(plant: Plant) {
+	updatePlant(plant: Plant) {
         this.afd.database.ref("plants/" + plant.common).update(plant);
         //.then
             //navigate to the url
