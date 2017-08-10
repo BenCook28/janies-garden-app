@@ -16,6 +16,18 @@ export class PlantsService {
 		//.catch
 			//print out the error
 	}
+<<<<<<< HEAD
+
+updatePlant(plant: Plant) {
+		this.afd.database.ref("plants/" + plant.common).update(plant);
+		//.then
+			//navigate to the url
+		//.catch
+			//print out the error
+	}
+	
+	constructor(private afd: AngularFireDatabase, private router: Router){}
+=======
 	onSubmit(user: User){
 		this.af.auth.signInWithEmailAndPassword(user.email, user.pass)
 		.then(() => {
@@ -42,4 +54,5 @@ export class PlantsService {
 
 
 	constructor(private afd: AngularFireDatabase, private af: AngularFireAuth, private router: Router){}
+>>>>>>> develop
 }
