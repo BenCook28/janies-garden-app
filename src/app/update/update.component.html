@@ -1,0 +1,76 @@
+<div class="container">
+    <h1>Edit Plant</h1>
+    <form (ngSubmit)="onSubmit()" #addplantForm="ngForm">
+      <div class="container col-xs-6">
+        <div class="form-group">
+          <label for="common-name">Common Name</label>
+          <input type="text" class="form-control" id="common-name" name="common-name" [(ngModel)] = "model.common">
+        </div>
+        <br />
+        <div class="form-group">
+          <label for="scientific-name">Scientific Name</label>
+          <input type="text" class="form-control" id="scientific-name" name="scientific-name" [(ngModel)] = "model.scientific">
+        </div>
+        <br />
+        <div class="form-group">
+          <label for="name">Link to an Image That's Online</label>
+          <input type="text" class="form-control" id="image-url" name="image-url" [(ngModel)] = "model.imgurl">
+        </div>
+        <br />
+        <!-- <div class="form-group border">
+          <label for="upload-image">Upload an Image</label>
+          <app-image-container></app-image-container>
+        </div>
+        <br /> -->
+        <div class="form-group">
+          <label for="water-requirements">Water Requirements</label>
+          <input type="text" class="form-control" id="water-requirements" name="water-requirements" [(ngModel)] = "model.water">
+        </div>
+        <br />
+        <div class="form-group">
+          <label for="sunlight-requirements">Sunlight Requirements</label>
+          <input type="text" class="form-control" id="sunlight-requirements" name="sunlight-requirements" [(ngModel)] = "model.sun">
+        </div>
+        <br />
+      </div> <!-- /.container .col-xs-6-->
+
+      <div class="container col-xs-6">
+        <div class="form-group">
+          <label for="date-planted">Date Planted (MM/DD/YYYY)</label>
+          <input type="text" class="form-control" id="date-planted" name="date-planted" [(ngModel)] = "model.planted">
+        </div>
+        <br />
+        <div class="form-group">
+          <label for="date-bloomed">Date Bloomed (MM/DD/YYYY)</label>
+          <input type="text" class="form-control" id="date-bloomed" name="date-bloomed" [(ngModel)] = "model.bloomed">
+        </div>
+        <br />
+        <div class="form-group">
+          <label for="location">Location</label>
+          <input type="text" class="form-control" id="location" name="location" [(ngModel)] = "model.location">
+        </div>
+        <br />
+        <div class="form-group">
+          <label for="max-height">Maximum Height</label>
+          <input type="text" class="form-control" id="max-height" name="max-height" [(ngModel)] = "model.height">
+        </div>
+        <br />
+        <div class="form-group">
+          <label for="max-width">Maximum Width</label>
+          <input type="text" class="form-control" id="max-width" name="max-width" [(ngModel)] = "model.width">
+        </div>
+        <br />
+
+        <div class="border">
+          <p><strong>Native Species?</strong></p>
+          <input type="radio" name="native" value="Yes" checked [(ngModel)] = "model.native"> Yes<br>
+          <input type="radio" name="native" value="No" checked [(ngModel)] = "model.native"> No<br>
+          <input type="radio" name="native" value="Unsure" checked [(ngModel)] = "model.native"> Unsure<br>
+        </div> <!-- /.border -->
+
+        <br />
+      <button type="submit" class="btn btn-danger"><a href="javascript:history.go(-1)">Cancel</a></button>
+      <button type="submit" class="btn btn-success">Submit</button>
+      </div> <!-- /.container .col-xs-6-->
+    </form>
+</div>

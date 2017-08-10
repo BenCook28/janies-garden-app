@@ -21,6 +21,7 @@ export class PlantsService {
 			//print out the error
 	}
 
+<<<<<<< HEAD
 updatePlant(plant: Plant) {
 		this.afd.database.ref("plants/" + plant.common).update(plant);
 		//.then
@@ -30,6 +31,8 @@ updatePlant(plant: Plant) {
 	}
 	
 
+=======
+>>>>>>> update
 	onSubmit(user: User){
 		this.af.auth.signInWithEmailAndPassword(user.email, user.pass)
 		.then(() => {
@@ -55,12 +58,22 @@ updatePlant(plant: Plant) {
 		})
 	}
 
+<<<<<<< HEAD
 	getPlant(s:String){
 			this.afd.object('/plant/'+s)
 	}
 	// updatePlant(p:Plant){
 	// 		this.afd.object('/plant/'+p.common).update(p);
 	// }
+=======
+	updatePlant(plant: Plant) {
+		this.afd.database.ref("addplant/" + plant.common).update(plant);
+		//.then
+			//navigate to the url
+		//.catch
+			//print out the error
+	}
+>>>>>>> update
 
 	//Each plant by individual user id.
 	//each iitem to populate

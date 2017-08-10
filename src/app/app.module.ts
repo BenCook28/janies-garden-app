@@ -26,6 +26,7 @@ import { SplashComponent } from './splash/splash.component';
 import { MyGardenComponent } from './my-garden/my-garden.component';
 
 import { routes } from './services/routes';
+import { UpdateComponent } from './update/update.component';
 
 export const firebaseConfig = {
     apiKey: "AIzaSyCITF5P0jG-DokP636CZqQj0e3HpYIF3s0",
@@ -45,7 +46,8 @@ export const firebaseConfig = {
     AddPlantComponent,
     SplashComponent,
     MyGardenComponent,
-    KeysPipe
+    KeysPipe,
+    UpdateComponent
     // ImageContainerComponent/*,*/
     // FileUploaderModule
   ],
