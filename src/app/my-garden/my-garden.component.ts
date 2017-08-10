@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PlantsService } from '../services/plants.service';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { MyGardenService } from '../services/my-garden.service';
 
 import { Plant } from '../models/plants'
 
@@ -14,6 +15,7 @@ export class MyGardenComponent implements OnInit {
   modelPlant = new Plant("","","","","","","","","","","");
   activeId = 1;
   plants = {};
+  plant = {};
 
   onClick(){
 			this.router.navigateByUrl('/addplant');
@@ -21,12 +23,20 @@ export class MyGardenComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  delete(index){
+    var key = Object.keys(this.plants)[index];
+    this.plant = this.plants[key];
+    console.log(key);
+    // this.plants[this.plant[index]]
+    this.mgs.delete(key);
+    this.plants[key]= "";
+    console.log('delete is here');
+  }
   change(id: number){
 
   }
 
-  constructor(private route: ActivatedRoute, private router: Router, private ps: PlantsService) {
+  constructor(private route: ActivatedRoute, private router: Router, private ps: PlantsService, private mgs: MyGardenService) {
     this.route.params.subscribe((params) => {
         this.ps.getPlantInfo().then((prof) => {
           this.plants = prof;

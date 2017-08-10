@@ -17,6 +17,7 @@ import { AddPlantComponent } from './addplant/addplant.component';
 
 import { FirebaseService } from './services/auth.service';
 import { PlantsService } from './services/plants.service';
+import { MyGardenService } from './services/my-garden.service';
 // New imports to update based on AngularFire2 version 4
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { HttpClientModule } from '@angular/common/http';
@@ -82,7 +83,8 @@ export const firebaseConfig = {
   providers: [
     FirebaseService,
     AngularFireAuth,
-    PlantsService
+    PlantsService,
+    MyGardenService
   ],
   bootstrap: [AppComponent]
 })

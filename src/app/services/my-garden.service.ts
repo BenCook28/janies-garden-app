@@ -12,8 +12,17 @@ export class MyGardenService{
 		this.afd.database.ref('plant/' + p.common).set(p)
 	}
 	
+	delete(key: String){
+		console.log("Hi, we're in the delete function :) ")
+		this.afd.database.ref('plants/' + key ).set(null).then((e)=>{
+			console.log(e, "In the callback")
+		})
+
+	}
 
         constructor(private afd: AngularFireDatabase, private route: ActivatedRoute, private router: Router){
+			
 		}
+
 	}
 	
