@@ -15,7 +15,8 @@ export class MyGardenService{
 	delete(key: String){
 		console.log("Hi, we're in the delete function :) ")
 		this.afd.database.ref('plants/' + key ).set(null).then((e)=>{
-			console.log(e, "In the callback")
+			console.log(e, "In the callback");
+			window.location.reload();
 		})
 
 	}

@@ -29,7 +29,7 @@ export class MyGardenComponent implements OnInit {
     console.log(key);
     // this.plants[this.plant[index]]
     this.mgs.delete(key);
-    this.plants[key]= "";
+    this.plants[key]= "hello";
     console.log('delete is here');
   }
   change(id: number){
