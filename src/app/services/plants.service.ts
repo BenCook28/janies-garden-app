@@ -20,6 +20,26 @@ export class PlantsService {
 		//.catch
 			//print out the error
 	}
+
+updatePlant(plant: Plant) {
+		this.afd.database.ref("plants/" + plant.common).update(plant);
+		//.then
+			//navigate to the url
+		//.catch
+			//print out the error
+	}
+	
+
+	onSubmit(user: User){
+		this.af.auth.signInWithEmailAndPassword(user.email, user.pass)
+		.then(() => {
+			this.router.navigateByUrl('/my-garden');
+		})
+		.catch((e) => {
+			console.log(e);
+		})
+	}
+
 	
 	// getPlantInfo(email: string){
 	// 	//Returns promise with the snapshot of the user data
@@ -38,11 +58,12 @@ export class PlantsService {
 	getPlant(s:String){
 			this.afd.object('/plant/'+s)
 	}
-	updatePlant(p:Plant){
-			this.afd.object('/plant/'+p.common).update(p);
-	}
+	// updatePlant(p:Plant){
+	// 		this.afd.object('/plant/'+p.common).update(p);
+	// }
 
 	//Each plant by individual user id.
 	//each iitem to populate
 	constructor(private afd: AngularFireDatabase, private af: AngularFireAuth, private router: Router){}
+
 }
