@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }   from '@angular/forms';
 import { RouterModule }   from '@angular/router';
 import { NgModule } from '@angular/core';
+import { KeysPipe } from './pipes/objects.keys';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuth } from 'angularfire2/auth';
@@ -42,7 +43,8 @@ export const firebaseConfig = {
     SignupComponent,
     AddPlantComponent,
     SplashComponent,
-    MyGardenComponent
+    MyGardenComponent,
+    KeysPipe
     // ImageContainerComponent/*,*/
     // FileUploaderModule
   ],
