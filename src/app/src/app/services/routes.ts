@@ -3,7 +3,6 @@ import { SignupComponent } from '../signup/signup.component';
 import { SplashComponent } from '../splash/splash.component';
 import { MyGardenComponent } from '../my-garden/my-garden.component';
 import { AddPlantComponent } from '../addplant/addplant.component';
-import { UpdateComponent } from '../update/update.component';
 
 export const routes = [
 	{
@@ -25,9 +24,5 @@ export const routes = [
       {
         path: 'addplant',
         component: AddPlantComponent
-      },
-      {
-        path: 'updateplant',
-        component: UpdateComponent
       }
 ]

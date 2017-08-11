@@ -1,4 +1,3 @@
-import {} from 'jasmine';
 import { JaniesGardenAppPage } from './app.po';
 
 describe('janies-garden-app App', () => {
