@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+	background-color: snow;
+	color: #3F4B3D;
+}
+
+.main-content{
+	/*padding-top: 2em;*/
+	/*padding-top: -50px !important;*/
+	margin: 0;
+	color: #3F4B3D !important;
+}
+.col-sm-4{
+	border: 1px solid lightgray;
+}
+/*nav {
+	margin: 0;
+}*/
+
+/*nav > body {
+	margin: 0;
+}*/

@@ -21,12 +21,8 @@ export class PlantsService {
             //print out the error
     }
 
-    updatePlant(plant: Plant) {
-        this.afd.database.ref("plants/").update(plant)
-        .then(() => {
-            this.router.navigateByUrl('/my-garden');
-        })
-
+	updatePlant(plant: Plant) {
+        this.afd.database.ref("plants/" + plant.common).update(plant);
         //.then
             //navigate to the url
         //.catch
