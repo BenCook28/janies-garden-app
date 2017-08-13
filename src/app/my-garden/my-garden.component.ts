@@ -23,15 +23,30 @@ export class MyGardenComponent implements OnInit {
 
   ngOnInit() {
   }
+
   delete(index){
     var key = Object.keys(this.plants)[index];
     this.plant = this.plants[key];
-    console.log(key);
     // this.plants[this.plant[index]]
     this.mgs.delete(key);
     this.plants[key]= "";
     console.log('delete is here');
   }
+
+    update(index){
+    var key = Object.keys(this.plants)[index];
+    console.log(key);
+    this.plant = this.plants[key];
+    console.log(this.plant);
+    // var uCommon = this.plant[key].common;
+    // console.log(uCommon);
+    // console.log('update is here');
+    // this.router.navigateByUrl('/updateplant');
+  }
+  twdb() {
+
+  }
+
   change(id: number){
 
   }

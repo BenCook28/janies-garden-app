@@ -4,7 +4,7 @@
       <div class="container col-xs-6">
         <div class="form-group">
           <label for="common-name">Common Name</label>
-          <input type="text" class="form-control" id="common-name" name="common-name" [(ngModel)] = "model.common">
+          <input [(ngModel)] = "model.common" type="text" class="form-control" id="common-name" name="common-name" [(ngModel)] = "model.common">
         </div>
         <br />
         <div class="form-group">
@@ -70,7 +70,7 @@
 
         <br />
       <button type="submit" class="btn btn-danger"><a href="javascript:history.go(-1)">Cancel</a></button>
-      <button type="submit" class="btn btn-success">Submit</button>
+      <button type="submit" class="btn btn-success">Save</button>
       </div> <!-- /.container .col-xs-6-->
     </form>
 </div>
