@@ -26,6 +26,7 @@ export class PlantsService {
         .then(() => {
             this.router.navigateByUrl('/my-garden');
         })
+
         //.then
             //navigate to the url
         //.catch
