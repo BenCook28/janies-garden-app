@@ -1,10 +1,12 @@
+<!-- <link rel="stylesheet" href="./addplant.component.css"> -->
+
 <div class="container">
-    <h1>Edit Plant</h1>
-    <form (ngSubmit)="onSubmit()" #editplantForm="ngForm">
+    <h1>Add a Plant to Your Garden</h1>
+    <form (ngSubmit)="onSubmit()" #addplantForm="ngForm">
       <div class="container col-xs-6">
         <div class="form-group">
           <label for="common-name">Common Name</label>
-          <input [(ngModel)] = "model.common" type="text" class="form-control" id="common-name" name="common-name" [(ngModel)] = "model.common">
+          <input type="text" class="form-control" id="common-name" name="common-name" [(ngModel)] = "model.common">
         </div>
         <br />
         <div class="form-group">
@@ -70,11 +72,7 @@
 
         <br />
       <button type="submit" class="btn btn-danger"><a href="javascript:history.go(-1)">Cancel</a></button>
-      <button type="submit" class="btn btn-success">Save</button>
+      <button type="submit" class="btn btn-success">Submit</button>
       </div> <!-- /.container .col-xs-6-->
     </form>
-</div>
-
-<div>
-  <addplant></addplant>
 </div>
