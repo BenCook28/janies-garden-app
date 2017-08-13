@@ -31,6 +31,7 @@ export class MyGardenComponent implements OnInit {
     this.mgs.delete(key);
     this.plants[key]= "";
     console.log('delete is here');
+    window.location.reload();
   }
 
     update(index){

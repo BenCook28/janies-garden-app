@@ -19,16 +19,6 @@ export class UpdateComponent implements OnInit {
   plants = {};
   @Input() model : Plant;
 
-  // update(index){
-  //   var key = Object.keys(this.plants)[index];
-  //   this.plant = this.plants[key];
-  //   var uCommon = this.plant[key].common;
-  //   // this.plants[this.plant[index]]
-  //   this.mgs.delete(key);
-  //   this.plants[key]= "";
-  //   console.log('update is here');
-  // }
-
   onSubmit(){
     this.mgs.updatePlant(this.model, this.plantId);
   }
@@ -37,7 +27,6 @@ export class UpdateComponent implements OnInit {
 
   ngOnInit() {
     this.model = new Plant("","","","","","","","","","","");
-    console.log("Here from Here 0");
     this.route.paramMap
       .switchMap((params: ParamMap) => {
         this.plantId = params.get('id');
