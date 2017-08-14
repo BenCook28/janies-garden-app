@@ -24,8 +24,8 @@ export class SigninComponent {
   	if(!this.model.pass)
       this.errors.pass="Please provide a valid password";
     else
-      this.errors.email="Invalid username and/or password";
-      // this.errors.pass="Invalid username and/or password";
+      this.errors.email="Invalid email and/or password";
+      // this.errors.pass="Email username and/or password";
   	
   	return(this.errors.email || this.errors.pass);
 
