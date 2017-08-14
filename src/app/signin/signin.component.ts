@@ -23,8 +23,8 @@ export class SigninComponent {
   		this.errors.email="Please provide a valid email";
   	if(!this.model.pass)
       this.errors.pass="Please provide a valid password";
-    else
-      this.errors.email="Invalid username and/or password";
+    // else
+    //   this.errors.email="Invalid username and/or password";
   	
   	return(this.errors.email || this.errors.pass);
 
@@ -36,8 +36,13 @@ export class SigninComponent {
   		return;
   	}
     console.log('hello');
+    const thisSaved = this;
   	this.user = new User(this.model.email,this.model.pass);
-  	this.fbs.signin(this.user);
+  	this.fbs.signin(this.user).then(function(err) {
+      if(err !== undefined) {
+        thisSaved.errors.pass = 'Email & password combination invalid, or account does not exist';
+      }
+    })
   }
   constructor(private firebase: FirebaseService) {
     this.fbs = firebase;
