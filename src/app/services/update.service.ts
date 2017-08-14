@@ -7,32 +7,20 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
 
 @Injectable()
-export class MyGardenService{
+export class updateService{
 	createPlant(p: Plant){
 		this.afd.database.ref('plant/' + p.common).set(p)
 	}
 	
-	delete(key: String){
+	update(key: String){
+		console.log("Hi, we're in the update function :) ")
 		this.afd.database.ref('plants/' + key ).set(null).then((e)=>{
 			console.log(e, "In the callback")
 		})
 
-	}
-
-	updatePlant(p: Plant, id: String){
-		return this.afd.database.ref('plants/' + id).update(p)
-		.then(() => {
-            this.router.navigateByUrl('/my-garden');
-        })
-	}
-
-	getPlant(id: string){
-		return this.afd.database.ref('plants/' + id).once('value')
-        .then(function(s) {
-			console.log(s.val());
-            return s.val();
-        })
     }
+    
+
         constructor(private afd: AngularFireDatabase, private route: ActivatedRoute, private router: Router){
 			
 		}

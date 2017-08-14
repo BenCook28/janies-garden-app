@@ -27,7 +27,7 @@ export const routes = [
         component: AddPlantComponent
       },
       {
-        path: 'updateplant',
+        path: 'updatePlant/:id',
         component: UpdateComponent
       }
 ]
