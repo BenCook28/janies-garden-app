@@ -21,12 +21,14 @@ export class FirebaseService{
 		})
 	}
 	signin(user: User){
-		this.af.auth.signInWithEmailAndPassword(user.email, user.pass)
+		return this.af.auth.signInWithEmailAndPassword(user.email, user.pass)
 		.then(() => {
 			this.router.navigateByUrl('/my-garden');
+			return;
 		})
 		.catch((e) => {
 			console.log(e);
+			return e;
 		})
 	}
 	signout(){
