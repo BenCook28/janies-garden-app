@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }   from '@angular/forms';
-import { RouterModule }   from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { KeysPipe } from './pipes/objects.keys';
 
@@ -75,7 +75,12 @@ export const firebaseConfig = {
       {
         path: 'addplant',
         component: AddPlantComponent
-      }
+      },
+      { 
+        path: '',
+        redirectTo: '/splash',
+        pathMatch: 'full'
+    }
     ]),
     RouterModule.forRoot(routes)
     // AngularFireModule.initializeApp(firebaseConfig)
