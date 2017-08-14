@@ -13,26 +13,14 @@ export class MyGardenService{
 	}
 	
 	delete(key: String){
+		console.log("Hi, we're in the delete function :) ")
 		this.afd.database.ref('plants/' + key ).set(null).then((e)=>{
-			console.log(e, "In the callback")
+			console.log(e, "In the callback");
+			window.location.reload();
 		})
 
 	}
 
-	updatePlant(p: Plant, id: String){
-		return this.afd.database.ref('plants/' + id).update(p)
-		.then(() => {
-            this.router.navigateByUrl('/my-garden');
-        })
-	}
-
-	getPlant(id: string){
-		return this.afd.database.ref('plants/' + id).once('value')
-        .then(function(s) {
-			console.log(s.val());
-            return s.val();
-        })
-    }
         constructor(private afd: AngularFireDatabase, private route: ActivatedRoute, private router: Router){
 			
 		}

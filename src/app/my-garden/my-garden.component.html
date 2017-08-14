@@ -1,5 +1,5 @@
-<div>
-    <h1>My Garden</h1>
+<div class="container">
+    <h1>My Garden List</h1>
     <div class="row">
         <div class="col-sm-4" *ngFor="let plant of plants | keys; let i=index">
             <p><strong>Common Name: {{plants[plant].common}}</strong></p>
@@ -13,13 +13,13 @@
             <p><strong>Maximum Height: {{plants[plant].height}}</strong></p>
             <p><strong>Maximum Width: {{plants[plant].width}}</strong></p>
             <p><strong>Native Species: {{plants[plant].native}}</strong></p>
-            <button > Edit </button> 
+            <a class="btn" href='/updatePlant/{{plant}}'> Edit </a>
             <button (click)="delete(i)"> Delete </button>
-
         </div>
+        <!--ugh  -->
     </div>
-        <form>
-            <br>
-            <button type="submit" class="btn btn-success"><a href="addplant">Add Plant</a></button>
+    <form>
+        <br>
+        <button type="submit" class="btn btn-success"><a href="addplant">Add Plant</a></button>
     </form>
 </div>
