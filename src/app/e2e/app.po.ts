@@ -9,4 +9,3 @@ export class JaniesGardenAppPage {
     return element(by.css('app-root h1')).getText();
   }
 }
-

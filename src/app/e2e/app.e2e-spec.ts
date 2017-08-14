@@ -13,4 +13,3 @@ describe('janies-garden-app App', () => {
     expect(page.getParagraphText()).toEqual('Welcome to app!');
   });
 });
-
