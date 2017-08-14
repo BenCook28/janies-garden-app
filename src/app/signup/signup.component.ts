@@ -21,6 +21,8 @@ export class SignupComponent {
 			this.errors.email="Please provide an email";
 		if(!this.model.pass)
 			this.errors.pass="Please provide a password";
+		if(this.model.pass.length < 6)
+			this.errors.pass="Password must be at least 6 characters"
 		if(!this.model.confpass)
 			this.errors.confpass="Please confirm your password";
 		if(this.model.confpass!=this.model.pass)
