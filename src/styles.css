@@ -1,7 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 * {
-	background-color: snow;
+	/*background-color: snow;*/
 	color: #3F4B3D;
+}
+
+body {
+	background: snow url("./app/img/pexels-photo-59599.jpg") no-repeat center center fixed;
+	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
 }
 
 .main-content{
@@ -9,14 +17,13 @@
 	/*padding-top: -50px !important;*/
 	margin: 0;
 	color: #3F4B3D !important;
+	/*background-color: snow;*/
 }
 .col-sm-4{
 	border: 1px solid lightgray;
+	background-color: snow;
 }
- .col-sm-4{
 
-    border: 1px solid lightgray;
- }
 /*nav {
 	margin: 0;
 }*/
