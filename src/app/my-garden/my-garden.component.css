@@ -2,4 +2,10 @@
 	overflow-wrap: break-word;
 	word-wrap: break-word;
 	hyphens: auto;
+	overflow: scroll;
+	padding: 2em;
+	border-radius: 1em;
+	height: 500px;
+	max-width: auto;
+	/*margin: .3em;*/
 }
