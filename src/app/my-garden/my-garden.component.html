@@ -1,24 +1,46 @@
 <div class="container">
-    <h1>My Garden List</h1>
-    <div class="row">
-        <div class="col-sm-4" *ngFor="let plant of plants | keys; let i=index">
-            <p><strong>Common Name: {{plants[plant].common}}</strong></p>
-            <p><strong>Scientific Name: {{plants[plant].scientific}}</strong></p>
-            <p><strong>Image URL: {{plants[plant].imgurl}}</strong></p>
-            <p><strong>Water Requirements: {{plants[plant].water}}</strong></p>
-            <p><strong>Sun Requirements: {{plants[plant].sun}}</strong></p>
-            <p><strong>Date Planted: {{plants[plant].planted}}</strong></p>
-            <p><strong>Date Bloomed: {{plants[plant].bloomed}}</strong></p>
-            <p><strong>Location: {{plants[plant].location}}</strong></p>
-            <p><strong>Maximum Height: {{plants[plant].height}}</strong></p>
-            <p><strong>Maximum Width: {{plants[plant].width}}</strong></p>
-            <p><strong>Native Species: {{plants[plant].native}}</strong></p>
-            <a class="btn" href='/updatePlant/{{plant}}'> Edit </a>
-            <button (click)="delete(i)"> Delete </button>
+    <div class="title">
+        <h1>My Garden</h1>
+        <a href="addplant" class="btn btn-success">Add Plant</a>
+    </div>
+
+    <br />
+    <br />
+
+    <div class="flex-container">
+        <div class="plant-wrapper" *ngFor="let plant of plants | keys; let i=index">
+            <div class="plant-container">
+                <div class="info">
+                    <p><strong>Common Name: </strong>{{plants[plant].common}}</p>
+                    <p><strong>Scientific Name: </strong>{{plants[plant].scientific}}</p>
+                    <p><strong>Image URL: </strong>{{plants[plant].imgurl}}</p>
+                    <p><strong>Water Requirements: </strong>{{plants[plant].water}}</p>
+                    <p><strong>Sun Requirements: </strong>{{plants[plant].sun}}</p>
+                    <p><strong>Date Planted: </strong>{{plants[plant].planted}}</p>
+                    <p><strong>Date Bloomed: </strong>{{plants[plant].bloomed}}</p>
+                    <p><strong>Location: </strong>{{plants[plant].location}}</p>
+                    <p><strong>Maximum Height: </strong>{{plants[plant].height}}</p>
+                    <p><strong>Maximum Width: </strong>{{plants[plant].width}}</p>
+                    <p><strong>Native Species: </strong>{{plants[plant].native}}</p>
+                </div>
+                <div class="btns">
+                    <a class="btn btn-primary btn-group" href='/updatePlant/{{plant}}'>Edit</a>
+                    <a class="btn btn-danger btn-group" (click)="delete(i)">Delete</a>
+                </div>
+            </div>
         </div>
     </div>
+
+
+
     <form>
         <br>
-        <button type="submit" class="btn btn-success"><a href="addplant">Add Plant</a></button>
+
+        <!-- <div class="addplantbtn"> -->
+            <a href="addplant" class="btn btn-success addplantbtn">Add Plant</a>
+        <!-- </div> -->
+        
+        <br />
+        <br />
     </form>
 </div>
