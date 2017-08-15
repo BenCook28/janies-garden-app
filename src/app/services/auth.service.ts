@@ -13,6 +13,9 @@ export class FirebaseService{
 		this.af.auth.createUserWithEmailAndPassword(user.email,user.pass)
 		.then(() => {
 			//Promise that gets fulfilled when the request is completed
+        	const atSign = user.email.search('@');
+        	const userEmail = user.email.slice(0, atSign);
+			localStorage.setItem('userEmail', userEmail);
 			this.router.navigateByUrl('/addplant');
 		})
 		.catch((error) => {
@@ -23,6 +26,9 @@ export class FirebaseService{
 	signin(user: User){
 		this.af.auth.signInWithEmailAndPassword(user.email, user.pass)
 		.then(() => {
+        	const atSign = user.email.search('@');
+        	const userEmail = user.email.slice(0, atSign);
+			localStorage.setItem('userEmail', userEmail);
 			this.router.navigateByUrl('/my-garden');
 		})
 		.catch((e) => {

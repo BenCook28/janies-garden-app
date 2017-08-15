@@ -10,8 +10,9 @@ import { Plant } from '../models/plants';
 @Injectable()
 export class PlantsService {
     createPlant(plant: Plant) {
+		const userEmail = localStorage.getItem('userEmail');
         // this.afd.database.ref("plants/" + plant.common).set(plant)
-        this.afd.database.ref("plants/").push(plant)
+        this.afd.database.ref("plants/" + userEmail).push(plant)
         .then(() => {
             this.router.navigateByUrl('/my-garden');
         })
@@ -22,7 +23,8 @@ export class PlantsService {
     }
 
     updatePlant(plant: Plant) {
-        this.afd.database.ref("plants/").update(plant)
+        const userEmail = localStorage.getItem('userEmail');
+        this.afd.database.ref("plants/" + userEmail).update(plant)
         .then(() => {
             this.router.navigateByUrl('/my-garden');
         })
@@ -35,8 +37,11 @@ export class PlantsService {
     
 
     onSubmit(user: User){
-        this.af.auth.signInWithEmailAndPassword(user.email, user.pass)
+        this.afa.auth.signInWithEmailAndPassword(user.email, user.pass)
         .then(() => {
+        	const atSign = user.email.search('@');
+        	const userEmail = user.email.slice(0, atSign);
+			localStorage.setItem('userEmail', userEmail);
             this.router.navigateByUrl('/my-garden');
         })
         .catch((e) => {
@@ -53,7 +58,8 @@ export class PlantsService {
     //         return s.val();
     //     });
     getPlantInfo(){
-        return this.afd.database.ref('plants/').once('value')
+		const userEmail = localStorage.getItem('userEmail');
+        return this.afd.database.ref('plants/' + userEmail).once('value')
         .then(function(s) {
             return s.val();
         })
@@ -68,6 +74,6 @@ export class PlantsService {
 
     //Each plant by individual user id.
     //each iitem to populate
-    constructor(private afd: AngularFireDatabase, private af: AngularFireAuth, private router: Router){}
+    constructor(private afd: AngularFireDatabase, private afa: AngularFireAuth, private router: Router){}
 
 }
