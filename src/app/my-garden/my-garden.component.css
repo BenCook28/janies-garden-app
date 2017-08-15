@@ -1,0 +1,5 @@
+.col-sm-4 {
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	hyphens: auto;
+}
