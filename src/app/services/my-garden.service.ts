@@ -9,31 +9,35 @@ import { AngularFireDatabase } from 'angularfire2/database';
 @Injectable()
 export class MyGardenService{
 	createPlant(p: Plant){
-		this.afd.database.ref('plant/' + p.common).set(p)
+		const userEmail = localStorage.getItem('userEmail');
+		this.afd.database.ref('plants/' + userEmail).set(p)
 	}
 	
 	delete(key: String){
-		this.afd.database.ref('plants/' + key ).set(null).then((e)=>{
+		const userEmail = localStorage.getItem('userEmail');
+		this.afd.database.ref('plants/' + userEmail + '/' + key).set(null).then((e)=>{
 			console.log(e, "In the callback")
 		})
 
 	}
 
 	updatePlant(p: Plant, id: String){
-		return this.afd.database.ref('plants/' + id).update(p)
+		const userEmail = localStorage.getItem('userEmail');
+		return this.afd.database.ref('plants/' + userEmail + '/' + id).update(p)
 		.then(() => {
             this.router.navigateByUrl('/my-garden');
         })
 	}
 
 	getPlant(id: string){
-		return this.afd.database.ref('plants/' + id).once('value')
+		const userEmail = localStorage.getItem('userEmail');
+		return this.afd.database.ref('plants/' + userEmail + '/' + id).once('value')
         .then(function(s) {
 			console.log(s.val());
             return s.val();
         })
     }
-        constructor(private afd: AngularFireDatabase, private route: ActivatedRoute, private router: Router){
+        constructor(private afd: AngularFireDatabase, private afa: AngularFireAuth, private route: ActivatedRoute, private router: Router){
 			
 		}
 
