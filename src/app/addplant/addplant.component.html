@@ -48,8 +48,8 @@
         <div class="border">
           <p><strong>Annual or Perennial?</strong></p>
           <input type="radio" name="annual" value="Annual" checked [(ngModel)] = "model.annualorperrenial"> Annual<br>
-          <input type="radio" name="native" value="Perennial" checked [(ngModel)] = "model.annualorperrenial"> Perennial<br>
-          <input type="radio" name="native" value="Unsure" checked [(ngModel)] = "model.annualorperrenial"> Unsure<br>
+          <input type="radio" name="perennial" value="Perennial" checked [(ngModel)] = "model.annualorperrenial"> Perennial<br>
+          <input type="radio" name="unsure" value="Unsure" checked [(ngModel)] = "model.annualorperrenial"> Unsure<br>
         </div> <!-- /.border -->
 
         <div *ngIf="model.annualorperrenial  == 'Perennial'" class="form-group" else model.datetodivide = "">
