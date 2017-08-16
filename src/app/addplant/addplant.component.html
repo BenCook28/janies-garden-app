@@ -1,6 +1,8 @@
 <div class="container">
     <h1>Add a Plant to Your Garden</h1>
     <form (ngSubmit)="onSubmit()" #addplantForm="ngForm">
+
+    <!-- Left-hand side of screen: -->
       <div class="container col-xs-6">
         <div class="form-group">
           <label for="common-name">Common Name</label>
@@ -32,8 +34,15 @@
           <input type="text" class="form-control" id="sunlight-requirements" name="sunlight-requirements" [(ngModel)] = "model.sun">
         </div>
         <br />
+
+        <div class="form-group">
+          <label for="location">Location</label>
+          <input type="text" class="form-control" id="location" name="location" [(ngModel)] = "model.location">
+        </div>
+        <!-- <br /> -->
       </div> <!-- /.container .col-xs-6-->
 
+      <!-- Right-hand side of screen: -->
       <div class="container col-xs-6">
         <div class="form-group">
           <label for="date-planted">Date Planted (MM/DD/YYYY)</label>
@@ -45,11 +54,7 @@
           <input type="text" class="form-control" id="date-bloomed" name="date-bloomed" [(ngModel)] = "model.bloomed">
         </div>
         <br />
-        <div class="form-group">
-          <label for="location">Location</label>
-          <input type="text" class="form-control" id="location" name="location" [(ngModel)] = "model.location">
-        </div>
-        <br />
+        
         <div class="form-group">
           <label for="max-height">Maximum Height</label>
           <input type="text" class="form-control" id="max-height" name="max-height" [(ngModel)] = "model.height">
@@ -60,14 +65,12 @@
           <input type="text" class="form-control" id="max-width" name="max-width" [(ngModel)] = "model.width">
         </div>
         <br />
-
         <div class="border">
           <p><strong>Native Species?</strong></p>
           <input type="radio" name="native" value="Yes" checked [(ngModel)] = "model.native"> Yes<br>
           <input type="radio" name="native" value="No" checked [(ngModel)] = "model.native"> No<br>
           <input type="radio" name="native" value="Unsure" checked [(ngModel)] = "model.native"> Unsure<br>
         </div> <!-- /.border -->
-
         <br />
       <a href="javascript:history.go(-1)" class="btn btn-danger btn-group">Cancel</a>
       <a><button type="submit" class="btn btn-success">Submit</button></a>

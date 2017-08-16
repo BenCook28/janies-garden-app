@@ -1,6 +1,8 @@
 <div class="container">
     <h1>Edit Plant</h1>
     <form (ngSubmit)="onSubmit()" #editplantForm="ngForm">
+
+    <!-- Left-hand side of screen: -->
       <div class="container col-xs-6">
         <div class="form-group">
           <label for="common-name">Common Name</label>
@@ -32,8 +34,14 @@
           <input type="text" class="form-control" id="sunlight-requirements" name="sunlight-requirements" [(ngModel)] = "model.sun">
         </div>
         <br />
+        <div class="form-group">
+          <label for="location">Location</label>
+          <input type="text" class="form-control" id="location" name="location" [(ngModel)] = "model.location">
+        </div>
+        <!-- <br /> -->
       </div> <!-- /.container .col-xs-6-->
 
+      <!-- Right-hand side of screen: -->
       <div class="container col-xs-6">
         <div class="form-group">
           <label for="date-planted">Date Planted (MM/DD/YYYY)</label>
@@ -45,11 +53,7 @@
           <input type="text" class="form-control" id="date-bloomed" name="date-bloomed" [(ngModel)] = "model.bloomed">
         </div>
         <br />
-        <div class="form-group">
-          <label for="location">Location</label>
-          <input type="text" class="form-control" id="location" name="location" [(ngModel)] = "model.location">
-        </div>
-        <br />
+        
         <div class="form-group">
           <label for="max-height">Maximum Height</label>
           <input type="text" class="form-control" id="max-height" name="max-height" [(ngModel)] = "model.height">
