@@ -26,7 +26,14 @@ export class AddPlantComponent {
 			this.model.location,
 			this.model.height,
 			this.model.width,
-			this.model.native
+			this.model.native,
+			this.model.datenextfertilizing,
+			this.model.typeoffertilizer,
+			this.model.datenextpruning,
+			this.model.soilrequirements,
+			this.model.annualorperrenial,
+			this.model.datetodevide,
+			this.model.notes
 			)
 		//We pass the plant object into our plants service
 		this.ps.createPlant(plant);

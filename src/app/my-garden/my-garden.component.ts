@@ -12,7 +12,7 @@ import { Plant } from '../models/plants'
 })
 export class MyGardenComponent implements OnInit {
   // plant = this.plant;
-  modelPlant = new Plant("","","","","","","","","","","");
+  modelPlant = new Plant("","","","","","","","","","","","","","","","","","");
   activeId = 1;
   plants = {};
   plant = {};
