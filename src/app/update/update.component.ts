@@ -14,7 +14,7 @@ import { Plant } from '../models/plants';
 })
 export class UpdateComponent implements OnInit {
   plantId = "";
-  modelPlant = new Plant("","","","","","","","","","","");
+  modelPlant = new Plant("","","","","","","","","","","","","","","","","","");
   activeId = 1;
   plants = {};
   @Input() model : Plant;
@@ -26,7 +26,7 @@ export class UpdateComponent implements OnInit {
   constructor(private mgs: MyGardenService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.model = new Plant("","","","","","","","","","","");
+    this.model = new Plant("","","","","","","","","","","","","","","","","","");
     this.route.paramMap
       .switchMap((params: ParamMap) => {
         this.plantId = params.get('id');
