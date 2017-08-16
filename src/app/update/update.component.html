@@ -1,7 +1,9 @@
 <div class="container">
-    <h1>Edit Plant</h1>
-    <form (ngSubmit)="onSubmit()" #editplantForm="ngForm">
-      <div class="container col-xs-6">
+  <h1>Edit Plant</h1>
+  <form (ngSubmit)="onSubmit()" #editplantForm="ngForm">
+    <div class="flex-container holdsdivs">
+      <!-- Left-hand side of screen: -->
+      <div class="container col-xs-6 leftdiv">
         <div class="form-group">
           <label for="common-name">Common Name</label>
           <input [(ngModel)] = "model.common" type="text" class="form-control" id="common-name" name="common-name" [(ngModel)] = "model.common">
@@ -17,11 +19,6 @@
           <input type="text" class="form-control" id="image-url" name="image-url" [(ngModel)] = "model.imgurl">
         </div>
         <br />
-        <!-- <div class="form-group border">
-          <label for="upload-image">Upload an Image</label>
-          <app-image-container></app-image-container>
-        </div>
-        <br /> -->
         <div class="form-group">
           <label for="water-requirements">Water Requirements</label>
           <input type="text" class="form-control" id="water-requirements" name="water-requirements" [(ngModel)] = "model.water">
@@ -32,9 +29,14 @@
           <input type="text" class="form-control" id="sunlight-requirements" name="sunlight-requirements" [(ngModel)] = "model.sun">
         </div>
         <br />
+        <div class="form-group">
+          <label for="location">Location</label>
+          <input type="text" class="form-control" id="location" name="location" [(ngModel)] = "model.location">
+        </div>
       </div> <!-- /.container .col-xs-6-->
 
-      <div class="container col-xs-6">
+      <!-- Right-hand side of screen: -->
+      <div class="container col-xs-6 rightdiv">
         <div class="form-group">
           <label for="date-planted">Date Planted (MM/DD/YYYY)</label>
           <input type="text" class="form-control" id="date-planted" name="date-planted" [(ngModel)] = "model.planted">
@@ -45,11 +47,7 @@
           <input type="text" class="form-control" id="date-bloomed" name="date-bloomed" [(ngModel)] = "model.bloomed">
         </div>
         <br />
-        <div class="form-group">
-          <label for="location">Location</label>
-          <input type="text" class="form-control" id="location" name="location" [(ngModel)] = "model.location">
-        </div>
-        <br />
+        
         <div class="form-group">
           <label for="max-height">Maximum Height</label>
           <input type="text" class="form-control" id="max-height" name="max-height" [(ngModel)] = "model.height">
@@ -69,8 +67,9 @@
         </div> <!-- /.border -->
 
         <br />
-      <a href="javascript:history.go(-1)" class="btn btn-danger btn-group">Cancel</a>
-      <button type="submit" class="btn btn-success btn-group">Save</button>
+        <a href="javascript:history.go(-1)" class="btn btn-danger btn-group">Cancel</a>
+        <button type="submit" class="btn btn-success btn-group">Save</button>
       </div> <!-- /.container .col-xs-6-->
-    </form>
+    </div>
+  </form>
 </div>
