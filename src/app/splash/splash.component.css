@@ -1,7 +1,19 @@
+.container {
+	background-color: snow;
+	padding: 1em;
+	border-radius: 1em;
+}
+
 .btn {
+	background-color: #3F4B3D;
 	border-color: #3F4B3D;
 	width: 10em;
 	height: 3.5em;
+	color: snow !important;
+}
+
+.glyphicon {
+	color: snow;
 }
 
 li, a {
