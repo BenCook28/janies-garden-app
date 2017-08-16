@@ -1,22 +1,51 @@
+.flex-container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+h1 {
+	position: relative;
+	padding-left: 0.5em;
+}
+
+.col-xs-6 {
+	flex: 1 0 50%;
+	padding: 2rem;
+	position: relative;
+	width: 100%;
+}
+
 a {
 	text-decoration: none;
 	color: white !important;
 }
 
-/*.left {
-	float: left;
-}
-
-.right {
-	float: right;
-}*/
-
-/*.btn-danger {
-	text: white !important;
-}*/
-
 .border {
 	border: 1px solid lightgray;
 	border-radius: 5px;
 	padding: 5px;
+	background-color: white;
+}
+
+.container {
+	border-radius: 1em;
+	padding: 1em;
+	background-color: snow !important;
+}
+
+.holdsdivs {
+	display: flex;
+	flex-direction: column;
+}
+
+@media (min-width: 800px) {
+	.holdsdivs {
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+
+	.col-xs-6 {
+		flex-basis: 45%;
+	}
 }
