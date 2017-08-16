@@ -1,3 +1,9 @@
+.container {
+	background-color: snow;
+	padding: 1em;
+	border-radius: 1em;
+}
+
 .btn {
 	border-color: #3F4B3D;
 	width: 10em;
