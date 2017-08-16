@@ -6,7 +6,7 @@
       <div class="container col-xs-6 leftdiv">
         <div class="form-group">
           <label for="common-name">Common Name</label>
-          <input [(ngModel)] = "model.common" type="text" class="form-control" id="common-name" name="common-name" [(ngModel)] = "model.common">
+          <input type="text" class="form-control" id="common-name" name="common-name" [(ngModel)] = "model.common">
         </div>
         <br />
         <div class="form-group">
@@ -19,57 +19,95 @@
           <input type="text" class="form-control" id="image-url" name="image-url" [(ngModel)] = "model.imgurl">
         </div>
         <br />
-        <div class="form-group">
-          <label for="water-requirements">Water Requirements</label>
-          <input type="text" class="form-control" id="water-requirements" name="water-requirements" [(ngModel)] = "model.water">
-        </div>
-        <br />
-        <div class="form-group">
-          <label for="sunlight-requirements">Sunlight Requirements</label>
-          <input type="text" class="form-control" id="sunlight-requirements" name="sunlight-requirements" [(ngModel)] = "model.sun">
-        </div>
-        <br />
-        <div class="form-group">
-          <label for="location">Location</label>
-          <input type="text" class="form-control" id="location" name="location" [(ngModel)] = "model.location">
-        </div>
-      </div> <!-- /.container .col-xs-6-->
+          <div class="form-group">
+            <label for="water-requirements">Water Requirements</label>
+            <input type="text" class="form-control" id="water-requirements" name="water-requirements" [(ngModel)] = "model.water">
+          </div>
+          <br />
+          <div class="form-group">
+            <label for="sunlight-requirements">Sunlight Requirements</label>
+            <input type="text" class="form-control" id="sunlight-requirements" name="sunlight-requirements" [(ngModel)] = "model.sun">
+          </div>
+          <br />
 
-      <!-- Right-hand side of screen: -->
-      <div class="container col-xs-6 rightdiv">
+          <div class="form-group">
+            <label for="location">Location</label>
+            <input type="text" class="form-control" id="location" name="location" [(ngModel)] = "model.location">
+          </div>
+
         <div class="form-group">
-          <label for="date-planted">Date Planted (MM/DD/YYYY)</label>
-          <input type="text" class="form-control" id="date-planted" name="date-planted" [(ngModel)] = "model.planted">
+          <label for="date-bloomed">Soil Requirements</label>
+          <input type="text" class="form-control" id="soil-requirements" name="soil-requirements" [(ngModel)] = "model.soilrequirements">
         </div>
-        <br />
+
         <div class="form-group">
-          <label for="date-bloomed">Date Bloomed (MM/DD/YYYY)</label>
-          <input type="text" class="form-control" id="date-bloomed" name="date-bloomed" [(ngModel)] = "model.bloomed">
+          <label for="date-bloomed">Date of Next Pruning</label>
+          <input type="text" class="form-control" id="date-next-pruning" name="date-next-pruning" [(ngModel)] = "model.datenextpruning">
         </div>
-        <br />
-        
-        <div class="form-group">
-          <label for="max-height">Maximum Height</label>
-          <input type="text" class="form-control" id="max-height" name="max-height" [(ngModel)] = "model.height">
-        </div>
-        <br />
-        <div class="form-group">
-          <label for="max-width">Maximum Width</label>
-          <input type="text" class="form-control" id="max-width" name="max-width" [(ngModel)] = "model.width">
-        </div>
-        <br />
 
         <div class="border">
-          <p><strong>Native Species?</strong></p>
-          <input type="radio" name="native" value="Yes" checked [(ngModel)] = "model.native"> Yes<br>
-          <input type="radio" name="native" value="No" checked [(ngModel)] = "model.native"> No<br>
-          <input type="radio" name="native" value="Unsure" checked [(ngModel)] = "model.native"> Unsure<br>
+          <p><strong>Annual or Perennial?</strong></p>
+          <input type="radio" name="annual" value="Annual" checked [(ngModel)] = "model.annualorperrenial"> Annual<br>
+          <input type="radio" name="perennial" value="Perennial" checked [(ngModel)] = "model.annualorperrenial"> Perennial<br>
+          <input type="radio" name="unsure" value="Unsure" checked [(ngModel)] = "model.annualorperrenial"> Unsure<br>
         </div> <!-- /.border -->
 
+        <div *ngIf="model.annualorperrenial  == 'Perennial'" class="form-group" else model.datetodivide = "">
+          <label for="annual-or-perrenial">Date to Divide</label>
+          <input type="text" class="form-control" id="date-to-devide" name="date-to-devide" [(ngModel)] = "model.datetodevide">
+        </div>
+          <!-- <br /> -->
+        </div> <!-- /.container .col-xs-6-->
+
+        <!-- Right-hand side of screen: -->
+        <div class="container col-xs-6 rightdiv">
+          <div class="form-group">
+            <label for="date-planted">Date Planted (MM/DD/YYYY)</label>
+            <input type="text" class="form-control" id="date-planted" name="date-planted" [(ngModel)] = "model.planted">
+          </div>
+          <br />
+          <div class="form-group">
+            <label for="date-bloomed">Date Bloomed (MM/DD/YYYY)</label>
+            <input type="text" class="form-control" id="date-bloomed" name="date-bloomed" [(ngModel)] = "model.bloomed">
+          </div>
+          <br />
+          
+          <div class="form-group">
+            <label for="max-height">Maximum Height</label>
+            <input type="text" class="form-control" id="max-height" name="max-height" [(ngModel)] = "model.height">
+          </div>
+          <br />
+          <div class="form-group">
+            <label for="max-width">Maximum Width</label>
+            <input type="text" class="form-control" id="max-width" name="max-width" [(ngModel)] = "model.width">
+          </div>
+          <br />
+          <div class="border">
+            <p><strong>Native Species?</strong></p>
+            <input type="radio" name="native" value="Yes" checked [(ngModel)] = "model.native"> Yes<br>
+            <input type="radio" name="native" value="No" checked [(ngModel)] = "model.native"> No<br>
+            <input type="radio" name="native" value="Unsure" checked [(ngModel)] = "model.native"> Unsure<br>
+          </div> <!-- /.border -->
+
+        <div class="form-group">
+          <label for="date-bloomed">Date of Next Fertilizing</label>
+          <input type="text" class="form-control" id="date-next-fertilizing" name="date-next-fertilizing" [(ngModel)] = "model.datenextfertilizing">
+        </div>
+
+        <div class="form-group">
+          <label for="date-bloomed">Type of Fertilizer</label>
+          <input type="text" class="form-control" id="type-of-fertilizer" name="type-of-fertilizer" [(ngModel)] = "model.typeoffertilizer">
+        </div>
+
+        <div class="form-group">
+          <label for="Notes">Notes</label><br>
+          <textarea name="notes" class="form-control" rows="6" [(ngModel)] = "model.notes"></textarea>
+        </div>
+
         <br />
-        <a href="javascript:history.go(-1)" class="btn btn-danger btn-group">Cancel</a>
-        <button type="submit" class="btn btn-success btn-group">Save</button>
-      </div> <!-- /.container .col-xs-6-->
-    </div>
-  </form>
-</div>
+          <a href="javascript:history.go(-1)" class="btn btn-danger btn-group">Cancel</a>
+          <a><button type="submit" class="btn btn-success">Submit</button></a>
+        </div> <!-- .col-xs-6-->
+      </div> <!-- /./flex-container -->
+    </form>
+    </div> <!-- /.container -->
