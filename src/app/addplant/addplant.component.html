@@ -34,6 +34,27 @@
             <label for="location">Location</label>
             <input type="text" class="form-control" id="location" name="location" [(ngModel)] = "model.location">
           </div>
+
+        <div class="form-group">
+          <label for="date-bloomed">Soil Requirements</label>
+          <input type="text" class="form-control" id="soil-requirements" name="soil-requirements" [(ngModel)] = "model.soilrequirements">
+        </div>
+
+        <div class="form-group">
+          <label for="date-bloomed">Date of Next Pruning</label>
+          <input type="text" class="form-control" id="date-next-pruning" name="date-next-pruning" [(ngModel)] = "model.datenextpruning">
+        </div>
+
+        <div class="border">
+          <p><strong>Annual or Perennial?</strong></p>
+          <input type="radio" name="annual" value="Annual" checked [(ngModel)] = "model.annualorperrenial"> Annual<br>
+          <input type="radio" name="native" value="Perennial" checked [(ngModel)] = "model.annualorperrenial"> Perennial<br>
+        </div> <!-- /.border -->
+
+        <div *ngIf="model.annualorperrenial  == 'Perrenial'" class="form-group" else model.datetodivide = "">
+          <label for="annual-or-perrenial">Date to Divide</label>
+          <input type="text" class="form-control" id="date-to-devide" name="date-to-devide" [(ngModel)] = "model.datetodevide">
+        </div>
           <!-- <br /> -->
         </div> <!-- /.container .col-xs-6-->
 
@@ -66,10 +87,27 @@
             <input type="radio" name="native" value="No" checked [(ngModel)] = "model.native"> No<br>
             <input type="radio" name="native" value="Unsure" checked [(ngModel)] = "model.native"> Unsure<br>
           </div> <!-- /.border -->
-          <br />
+
+        <div class="form-group">
+          <label for="date-bloomed">Date of Next Fertilizing</label>
+          <input type="text" class="form-control" id="date-next-fertilizing" name="date-next-fertilizing" [(ngModel)] = "model.datenextfertilizing">
+        </div>
+
+        <div class="form-group">
+          <label for="date-bloomed">Type of Fertilizer</label>
+          <input type="text" class="form-control" id="type-of-fertilizer" name="type-of-fertilizer" [(ngModel)] = "model.typeoffertilizer">
+        </div>
+
+        <div class="form-group">
+          <label for="Notes">Notes</label><br>
+          <textarea name="notes" class="form-control" rows="5" [(ngModel)] = "model.notes"></textarea>
+        </div>
+
+        <br />
           <a href="javascript:history.go(-1)" class="btn btn-danger btn-group">Cancel</a>
           <a><button type="submit" class="btn btn-success">Submit</button></a>
         </div> <!-- .col-xs-6-->
       </div> <!-- /./flex-container -->
     </form>
     </div> <!-- /.container -->
+
