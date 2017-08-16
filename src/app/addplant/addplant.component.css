@@ -3,20 +3,14 @@ a {
 	color: white !important;
 }
 
-/*.left {
-	float: left;
-}
-
-.right {
-	float: right;
-}*/
-
-/*.btn-danger {
-	text: white !important;
-}*/
-
 .border {
 	border: 1px solid lightgray;
 	border-radius: 5px;
 	padding: 5px;
+}
+
+.container {
+	border-radius: 1em;
+	background-color: snow;
+	padding: 1em;
 }

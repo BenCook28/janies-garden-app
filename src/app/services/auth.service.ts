@@ -40,7 +40,7 @@ export class FirebaseService{
 	signout(){
 		this.af.auth.signOut()
 		.then(() => {
-			this.router.navigateByUrl('/signin');
+			this.router.navigateByUrl('/splash');
 		})
 		.catch((e) => {
 			console.log(e);
