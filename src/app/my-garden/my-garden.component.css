@@ -21,7 +21,10 @@
 	max-width: auto;
 	background-color: snow;
 }
-
+.plant-container img{
+	max-width: calc(100% - 3em);
+	max-height: 200px;
+}
 .info {
 	height: calc(100% - 35px);
 }
@@ -53,7 +56,7 @@ body {
 	margin: 0 auto;
 	text-align: center;
 }
-p {
+.info {
     position: relative;
 }
 
