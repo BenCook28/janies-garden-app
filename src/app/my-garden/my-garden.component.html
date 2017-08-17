@@ -15,22 +15,20 @@
                     <p><strong>Scientific Name: </strong>{{plants[plant].scientific}}</p>
                     <p><strong>Image URL: </strong>{{plants[plant].imgurl}}</p>
                     <p><strong>Water Requirements: </strong>{{plants[plant].water}}</p>
-                    <p><strong>Sun Requirements: </strong>{{plants[plant].sun}}</p>
+                    <p><strong>Sunlight Requirements: </strong>{{plants[plant].sun}}</p>
+                    <p><strong>Location: </strong>{{plants[plant].location}}</p>
+                    <p><strong>Soil Requirements: </strong>{{plants[plant].soilrequirements}}</p>  
+                    <p><strong>Date of Next Pruning: </strong>{{plants[plant].datenextpruning}}</p>
+                    <p><strong>Annual or Perennial: </strong>{{plants[plant].annualorperrenial}}</p>
+                    <p><strong>Date to Divide (if perennial): </strong>{{plants[plant].datetodevide}}</p>
                     <p><strong>Date Planted: </strong>{{plants[plant].planted}}</p>
                     <p><strong>Date Bloomed: </strong>{{plants[plant].bloomed}}</p>
-                    <p><strong>Location: </strong>{{plants[plant].location}}</p>
                     <p><strong>Maximum Height: </strong>{{plants[plant].height}}</p>
                     <p><strong>Maximum Width: </strong>{{plants[plant].width}}</p>
                     <p><strong>Native Species: </strong>{{plants[plant].native}}</p>
-                    <p><strong>Date Next Fertilizing: </strong>{{plants[plant].datenextfertilizing}}</p>
+                    <p><strong>Date of Next Fertilizing: </strong>{{plants[plant].datenextfertilizing}}</p>
                     <p><strong>Type of Fertilizer: </strong>{{plants[plant].typeoffertilizer}}</p>
-                    <p><strong>Date Next Pruning: </strong>{{plants[plant].datenextpruning}}</p>
-                    <p><strong>Soil Requirements: </strong>{{plants[plant].soilrequirements}}</p>                   
-                    <p><strong>Annual or Perrenial: </strong>{{plants[plant].annualorperrenial}}</p>
-                    <p><strong>Date to Divide: </strong>{{plants[plant].datetodevide}}</p>
                     <p><strong>Notes: </strong>{{plants[plant].notes}}</p>
-                    
-
                 </div>
                 <div class="btns">
                     <a class="btn btn-primary btn-group" href='/updatePlant/{{plant}}'>Edit</a>
@@ -39,16 +37,11 @@
             </div>
         </div>
     </div>
-
-
-
     <form>
         <br>
-
         <!-- <div class="addplantbtn"> -->
             <a href="addplant" class="btn btn-success addplantbtn">Add Plant</a>
-        <!-- </div> -->
-        
+        <!-- </div> --> 
         <br />
         <br />
     </form>
