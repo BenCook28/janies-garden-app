@@ -25,6 +25,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { SplashComponent } from './splash/splash.component';
 import { MyGardenComponent } from './my-garden/my-garden.component';
+import { ImageService } from './services/image.service';
 
 import { routes } from './services/routes';
 import { UpdateComponent } from './update/update.component';
@@ -34,7 +35,7 @@ export const firebaseConfig = {
     authDomain: "janies-garden-app.firebaseapp.com",
     databaseURL: "https://janies-garden-app.firebaseio.com",
     projectId: "janies-garden-app",
-    storageBucket: "",
+    storageBucket: "gs://janies-garden-app.appspot.com",
     messagingSenderId: "337108773371"
 };
 
@@ -68,7 +69,8 @@ export const firebaseConfig = {
     AngularFireAuth,
     PlantsService,
     MyGardenService,
-    AuthGuard
+    AuthGuard,
+    ImageService
   ],
   bootstrap: [AppComponent]
 })

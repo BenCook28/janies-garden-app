@@ -1,24 +1,46 @@
-// import { Injectable, Inject } from '@angular/core';
-// import { AngularFireDatabase, FirebaseListObservable } from "angularfire2/database";
-// import Profile from "../models/profile";
-// import Trip from '../models/trip';
-// import { FirebaseApp, AngularFireModule } from "angularfire2";
-// import * as firebase from "firebase/app";
-// import 'firebase/storage';
+import { Injectable, Inject } from '@angular/core';
+import { AngularFireDatabase, FirebaseListObservable } from "angularfire2/database";
+import { User } from '../models/user';
+import { Plant } from "../models/plants";
+import { FirebaseApp, AngularFireModule } from "angularfire2";
+import * as firebase from "firebase/app";
+import { FirebaseService } from "./auth.service"
+import 'firebase/storage';
 
-// @Injectable()
-// export class ImageService {
-//   private ProfileImages: firebase.storage.Reference;
-//   private TripImages   : firebase.storage.Reference;
-//   private Storage      : firebase.storage.Storage;
-//   constructor(private db: FirebaseApp, private test: AngularFireModule) {
-//     this.Storage       = db.storage();
-//     this.ProfileImages = db.storage().ref('/profileImg/');  //reference to the profile images
-//     this.TripImages    = db.storage().ref('/tripImg/');     //reference to the trips images
-//   }
-//   uploadProfile(img: any, p: Profile, cb?: (snapshot: firebase.storage.UploadTaskSnapshot, err?: Error) => null | void) {
+@Injectable()
+export class ImageService {
+  private PlantImage: firebase.storage.Reference;
+  private Storage: firebase.storage.Storage;
+  constructor(private db: FirebaseApp, private test: AngularFireModule) {
+    this.Storage = db.storage();
+    this.PlantImage = db.storage().ref('/plantimages/')
+    // const atSign = user.email.search('@');
+    // const userEmail = user.email.slice(0, atSign);
+		// localStorage.setItem('userEmail', userEmail);
+    // this.PlantImage = db.storage().ref("/plants/" + userEmail/);
 
-//     this.Storage.ref('/profileImg/' + p.$key).put(img).then((snap) => {//snap is a snapshot
+  }
+  uploadImage(img:any, id: String, cb?: (snapshot: firebase.storage.UploadTaskSnapshot, err?: Error) => 
+    null | void){
+      this.Storage.ref('/plantimages/' + id).put(img).then((snap) => { 
+        if(cb){
+          cb(snap, null)
+        }
+      }).catch(err => {
+        if(cb){
+          cb(null, err)
+        }
+      })
+  }
+//   uploadPicture(img: any, p: Plant cb?: (snapshot: firebase.storage.UploadTaskSnapshot, err?: Error) => null | void) {
+    
+    //how Ben and Caitlyn get user
+
+    // const atSign = user.email.search('@');
+    //     	const userEmail = user.email.slice(0, atSign);
+    //         localStorage.setItem('userEmail', userEmail);
+            
+//     this.Storage.ref('/plants/' + p.$key).put(img).then((snap) => {//snap is a snapshot
 //       if (cb) {
 //         cb(snap, null);
 //       }
@@ -51,4 +73,4 @@
 //     });
 //   }
 
-// }
+}
