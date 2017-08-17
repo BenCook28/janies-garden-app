@@ -8,10 +8,10 @@ import { AuthGuard } from './auth-guard.service';
 // import { AuthGuard } from '../guards/auth.guards';
 
 export const routes = [
-      // {
-      //   path: '',
-      //   canActivateChild: [AuthGuard],
-      //   children: [
+      {
+        path: '',
+        component: SplashComponent
+      },
 	    {
         path: 'signin',
         component: SigninComponent
