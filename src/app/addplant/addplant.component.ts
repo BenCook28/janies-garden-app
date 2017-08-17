@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 import { PlantsService } from '../services/plants.service';
+import { ImageService } from '../services/image.service';
 // import {Component, ElementRef} from 'angular2/core';
 
 import { Plant } from '../models/plants';
@@ -12,13 +13,22 @@ import { Plant } from '../models/plants';
 
 export class AddPlantComponent {
 	model: any = {};
+	 @ViewChild('imgInput') el: ElementRef;
+
+	img: string;
+	@ViewChild('imgUp') imgUp: ElementRef;
 
 	onSubmit(){
 		//Wrap the data in the model into a nice plant object
-		var plant = new Plant(
+		if (this.el.nativeElement.files[0]){
+			this.is.uploadImage(this.el.nativeElement.files[0], window.localStorage.getItem("userEmail"), (snap, err) => {
+				if(err){
+					return console.log(err);
+				}
+			var plant = new Plant(
 			this.model.common,
 			this.model.scientific,
-			this.model.imgurl,
+			snap.downloadURL,
 			this.model.water,
 			this.model.sun,
 			this.model.planted,
@@ -33,12 +43,13 @@ export class AddPlantComponent {
 			this.model.soilrequirements,
 			this.model.annualorperrenial,
 			this.model.datetodevide,
-			this.model.notes
-			)
+			this.model.notes)
+			this.ps.createPlant(plant);
+			})
+		}
 		//We pass the plant object into our plants service
-		this.ps.createPlant(plant);
 	}
 
-	constructor(private ps:PlantsService) { }
+	constructor(private ps:PlantsService, private is: ImageService) { }
 
 }
