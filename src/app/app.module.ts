@@ -14,6 +14,7 @@ import { SignupComponent } from './signup/signup.component';
 import { AddPlantComponent } from './addplant/addplant.component';
 // import { ImageContainerComponent } from './addplant/image-container/image-container.component';
 // import { FileUploaderModule } from '@uniprank/ngx-file-uploader';
+import { AuthGuard} from './services/auth-guard.service';
 
 import { FirebaseService } from './services/auth.service';
 import { PlantsService } from './services/plants.service';
@@ -60,30 +61,7 @@ export const firebaseConfig = {
     AngularFireAuthModule,
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot([
-      {
-         path: 'signin',
-         component: SigninComponent
-      },
-      {
-        path: 'signup',
-        component: SignupComponent
-      },
-      {
-        path: 'splash',
-        component: SplashComponent
-      },      
-      {
-        path: 'addplant',
-        component: AddPlantComponent
-      },
-      { 
-        path: '',
-        redirectTo: '/splash',
-        pathMatch: 'full'
-    }
-    ]),
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes, {useHash:true})
     // AngularFireModule.initializeApp(firebaseConfig)
   ],
   providers: [
@@ -91,6 +69,7 @@ export const firebaseConfig = {
     AngularFireAuth,
     PlantsService,
     MyGardenService,
+    AuthGuard,
     ImageService
   ],
   bootstrap: [AppComponent]

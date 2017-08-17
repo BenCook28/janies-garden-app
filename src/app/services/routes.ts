@@ -4,6 +4,7 @@ import { SplashComponent } from '../splash/splash.component';
 import { MyGardenComponent } from '../my-garden/my-garden.component';
 import { AddPlantComponent } from '../addplant/addplant.component';
 import { UpdateComponent } from '../update/update.component';
+import { AuthGuard } from './auth-guard.service';
 // import { AuthGuard } from '../guards/auth.guards';
 
 export const routes = [
@@ -25,15 +26,18 @@ export const routes = [
       },
       {
         path: 'my-garden',
-        component: MyGardenComponent
+        component: MyGardenComponent,
+        canActivate: [AuthGuard]
       },
       {
         path: 'addplant',
-        component: AddPlantComponent
+        component: AddPlantComponent,
+        canActivate: [AuthGuard]
       },
       {
         path: 'updatePlant/:id',
-        component: UpdateComponent
+        component: UpdateComponent,
+        canActivate: [AuthGuard]
       }
     // ]
   // }
