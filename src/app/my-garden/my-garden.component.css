@@ -53,6 +53,9 @@ body {
 	margin: 0 auto;
 	text-align: center;
 }
+p {
+    position: relative;
+}
 
 @media (min-width: 1032px) {
 	.plant-wrapper {
