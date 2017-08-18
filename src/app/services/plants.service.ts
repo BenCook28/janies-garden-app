@@ -24,6 +24,7 @@ export class PlantsService {
 
     updatePlant(plant: Plant) {
         const userEmail = localStorage.getItem('userEmail');
+        console.log(plant);
         this.afd.database.ref("plants/" + userEmail).update(plant)
         .then(() => {
             this.router.navigateByUrl('/my-garden');
@@ -59,10 +60,8 @@ export class PlantsService {
     //     });
     getPlantInfo(){
 		const userEmail = localStorage.getItem('userEmail');
-        return this.afd.database.ref('plants/' + userEmail).once('value')
-        .then(function(s) {
-            return s.val();
-        })
+        return this.afd.list('plants/' + userEmail)
+        
     }
 
     getPlant(s:String){
