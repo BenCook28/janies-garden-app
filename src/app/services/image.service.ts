@@ -11,6 +11,7 @@ import 'firebase/storage';
 export class ImageService {
   private PlantImage: firebase.storage.Reference;
   private Storage: firebase.storage.Storage;
+
   constructor(private db: FirebaseApp, private test: AngularFireModule) {
     this.Storage = db.storage();
     this.PlantImage = db.storage().ref('/plantimages/')
@@ -30,7 +31,7 @@ export class ImageService {
         if(cb){
           cb(null, err)
         }
-      })
+      });
   }
 //   uploadPicture(img: any, p: Plant cb?: (snapshot: firebase.storage.UploadTaskSnapshot, err?: Error) => null | void) {
     
