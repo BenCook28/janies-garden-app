@@ -21,7 +21,7 @@ export class AddPlantComponent {
 	onSubmit(){
 		//Wrap the data in the model into a nice plant object
 		if (this.el.nativeElement.files[0]){
-			this.is.uploadImage(this.el.nativeElement.files[0], window.localStorage.getItem("userEmail"), (snap, err) => {
+			this.is.uploadImage(this.el.nativeElement.files[0], window.localStorage.getItem("userEmail") + this.model.common, (snap, err) => {
 				if(err){
 					return console.log(err);
 				}
@@ -49,7 +49,6 @@ export class AddPlantComponent {
 		}
 		//We pass the plant object into our plants service
 	}
-
 	constructor(private ps:PlantsService, private is: ImageService) { }
 
 }
