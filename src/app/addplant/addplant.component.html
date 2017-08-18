@@ -5,7 +5,7 @@
       <!-- Left-hand side of screen: -->
       <div class="container col-xs-6 leftdiv">
         <div class="form-group">
-          <label for="common-name">Common Name</label>
+          <label for="common-name">Common Name (required)</label>
           <input type="text" class="form-control" id="common-name" name="common-name" [(ngModel)] = "model.common">
         </div>
         <br />
@@ -16,7 +16,7 @@
         <br />
 
         <div class="form-group">
-            <label for="upload-image">Upload Image</label>
+            <label for="upload-image">Upload Image (required)</label>
             <img *ngIf='img' [src]='img' />
             <input #imgInput name="image-upload" type="file" accept="image/png, image/jpeg, image/jpg, image/JPG, image/PNG, image/JPEG" id="image-upload">
         </div>     
