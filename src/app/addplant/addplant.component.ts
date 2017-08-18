@@ -16,7 +16,6 @@ export class AddPlantComponent {
 	 @ViewChild('imgInput') el: ElementRef;
 
 	img: string;
-	@ViewChild('imgUp') imgUp: ElementRef;
 
 	onSubmit(){
 		//Wrap the data in the model into a nice plant object
@@ -25,26 +24,26 @@ export class AddPlantComponent {
 				if(err){
 					return console.log(err);
 				}
-			var plant = new Plant(
-			this.model.common,
-			this.model.scientific,
-			snap.downloadURL,
-			this.model.water,
-			this.model.sun,
-			this.model.planted,
-			this.model.bloomed,
-			this.model.location,
-			this.model.height,
-			this.model.width,
-			this.model.native,
-			this.model.datenextfertilizing,
-			this.model.typeoffertilizer,
-			this.model.datenextpruning,
-			this.model.soilrequirements,
-			this.model.annualorperrenial,
-			this.model.datetodevide,
-			this.model.notes)
-			this.ps.createPlant(plant);
+				var plant = new Plant(
+				this.model.common,
+				this.model.scientific,
+				snap.downloadURL,
+				this.model.water,
+				this.model.sun,
+				this.model.planted,
+				this.model.bloomed,
+				this.model.location,
+				this.model.height,
+				this.model.width,
+				this.model.native,
+				this.model.datenextfertilizing,
+				this.model.typeoffertilizer,
+				this.model.datenextpruning,
+				this.model.soilrequirements,
+				this.model.annualorperrenial,
+				this.model.datetodevide,
+				this.model.notes)
+				this.ps.createPlant(plant);
 			})
 		}
 		//We pass the plant object into our plants service

@@ -23,7 +23,7 @@ export class MyGardenService{
 
 	updatePlant(p: Plant, id: String){
 		const userEmail = localStorage.getItem('userEmail');
-		return this.afd.database.ref('plants/' + userEmail + '/' + id).update(p)
+		this.afd.database.ref('plants/' + userEmail + '/' + id).update(p)
 		.then(() => {
             this.router.navigateByUrl('/my-garden');
         })
