@@ -16,7 +16,7 @@ export class Plant {
 		public datenextpruning: string = "",
 		public soilrequirements: string = "",
 		public annualorperrenial: string = "",
-		public datetodevide: string = "",
+		public datetodevide: string = "N/A",
 		public notes: string = ""
 	) {}
 	

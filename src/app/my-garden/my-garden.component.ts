@@ -12,7 +12,7 @@ import { Plant } from '../models/plants'
 })
 export class MyGardenComponent implements OnInit {
   // plant = this.plant;
-  modelPlant = new Plant("","","","","","","","","","","","","","","","","","");
+  modelPlant = new Plant("","","","","","","","","","","","","","","","","");
   activeId = 1;
   plants = {};
   plant = {};
@@ -24,14 +24,11 @@ export class MyGardenComponent implements OnInit {
   ngOnInit() {
   }
 
-  delete(index){
-    var key = Object.keys(this.plants)[index];
-    this.plant = this.plants[key];
-    // this.plants[this.plant[index]]
+  delete(key){
+    
     this.mgs.delete(key);
-    this.plants[key]= "";
+    
     console.log('delete is here');
-    window.location.reload();
   }
 
     update(index){
@@ -54,12 +51,12 @@ export class MyGardenComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private router: Router, private ps: PlantsService, private mgs: MyGardenService) {
     this.route.params.subscribe((params) => {
-        this.ps.getPlantInfo().then((prof) => {
-          this.plants = prof;
+        this.ps.getPlantInfo().subscribe(plants=>{
+            this.plants=plants;
+        })
           // this.modelPlant = new Plant(prof.common, prof.scientific, prof.imgurl, prof.water, prof.sun, prof.planted, prof.bloomed,
           // prof.location, prof.height, prof.width, prof.native);
-        console.log(prof);
-      })
+       
     })
    }
 }

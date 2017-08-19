@@ -1,38 +1,41 @@
 <div class="container">
     <div class="title">
         <h1>My Garden</h1>
-        <a href="addplant" class="btn btn-success">Add Plant</a>
+        <a routerLink="/addplant" class="btn btn-success">Add Plant</a>
     </div>
 
     <br />
     <br />
 
     <div class="flex-container">
-        <div class="plant-wrapper" *ngFor="let plant of plants | keys; let i=index">
+        <div class="plant-wrapper" *ngFor="let plant of plants">
             <div class="plant-container">
                 <div class="info">
-                    <p><strong>Common Name: </strong>{{plants[plant].common}}</p>
-                    <p><strong>Scientific Name: </strong>{{plants[plant].scientific}}</p>
-                    <p><strong>Image URL: </strong>{{plants[plant].imgurl}}</p>
-                    <p><strong>Water Requirements: </strong>{{plants[plant].water}}</p>
-                    <p><strong>Sunlight Requirements: </strong>{{plants[plant].sun}}</p>
-                    <p><strong>Location: </strong>{{plants[plant].location}}</p>
-                    <p><strong>Soil Requirements: </strong>{{plants[plant].soilrequirements}}</p>  
-                    <p><strong>Date of Next Pruning: </strong>{{plants[plant].datenextpruning}}</p>
-                    <p><strong>Annual or Perennial: </strong>{{plants[plant].annualorperrenial}}</p>
-                    <p><strong>Date to Divide (if perennial): </strong>{{plants[plant].datetodevide}}</p>
-                    <p><strong>Date Planted: </strong>{{plants[plant].planted}}</p>
-                    <p><strong>Date Bloomed: </strong>{{plants[plant].bloomed}}</p>
-                    <p><strong>Maximum Height: </strong>{{plants[plant].height}}</p>
-                    <p><strong>Maximum Width: </strong>{{plants[plant].width}}</p>
-                    <p><strong>Native Species: </strong>{{plants[plant].native}}</p>
-                    <p><strong>Date of Next Fertilizing: </strong>{{plants[plant].datenextfertilizing}}</p>
-                    <p><strong>Type of Fertilizer: </strong>{{plants[plant].typeoffertilizer}}</p>
-                    <p><strong>Notes: </strong>{{plants[plant].notes}}</p>
+                    <p><strong>Common Name: </strong>{{plant.common}}</p>
+                    <p><strong>Scientific Name: </strong>{{plant.scientific}}</p>
+                    <p><strong>Uploaded Image: </strong></p><img [src]="plant.imgurl">
+                    <br />
+                    <br />
+                    <!-- <p><strong>Image URL: </strong>{{plant.imgurl}}</p> -->
+                    <p><strong>Water Requirements: </strong>{{plant.water}}</p>
+                    <p><strong>Sunlight Requirements: </strong>{{plant.sun}}</p>
+                    <p><strong>Location: </strong>{{plant.location}}</p>
+                    <p><strong>Soil Requirements: </strong>{{plant.soilrequirements}}</p>  
+                    <p><strong>Date of Next Pruning: </strong>{{plant.datenextpruning}}</p>
+                    <p><strong>Annual or Perennial: </strong>{{plant.annualorperrenial}}</p>
+                    <p><strong>Date to Divide (if perennial): </strong>{{plant.datetodevide}}</p>
+                    <p><strong>Date Planted: </strong>{{plant.planted}}</p>
+                    <p><strong>Date Bloomed: </strong>{{plant.bloomed}}</p>
+                    <p><strong>Maximum Height: </strong>{{plant.height}}</p>
+                    <p><strong>Maximum Width: </strong>{{plant.width}}</p>
+                    <p><strong>Native Species: </strong>{{plant.native}}</p>
+                    <p><strong>Date of Next Fertilizing: </strong>{{plant.datenextfertilizing}}</p>
+                    <p><strong>Type of Fertilizer: </strong>{{plant.typeoffertilizer}}</p>
+                    <p><strong>Notes: </strong>{{plant.notes}}</p>
                 </div>
                 <div class="btns">
-                    <a class="btn btn-primary btn-group" href='/updatePlant/{{plant}}'>Edit</a>
-                    <a class="btn btn-danger btn-group" (click)="delete(i)">Delete</a>
+                    <a class="btn btn-primary btn-group" routerLink='/updatePlant/{{plant.$key}}'>Edit</a>
+                    <a class="btn btn-danger btn-group" (click)="delete(plant.$key)">Delete</a>
                 </div>
             </div>
         </div>
@@ -40,7 +43,7 @@
     <form>
         <br>
         <!-- <div class="addplantbtn"> -->
-            <a href="addplant" class="btn btn-success addplantbtn">Add Plant</a>
+            <a routerLink="/addplant" class="btn btn-success addplantbtn">Add Plant</a>
         <!-- </div> --> 
         <br />
         <br />

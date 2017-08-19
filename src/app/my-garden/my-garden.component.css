@@ -14,14 +14,16 @@
 	overflow-wrap: break-word;
 	word-wrap: break-word;
 	hyphens: auto;
-	overflow: scroll;
 	padding: 1.5em;
 	border-radius: 1em;
 	height: 100%;
 	max-width: auto;
 	background-color: snow;
 }
-
+.plant-container img{
+	max-width: calc(100% - 3em);
+	max-height: 200px;
+}
 .info {
 	height: calc(100% - 35px);
 }
@@ -52,6 +54,9 @@ body {
 	display: table;
 	margin: 0 auto;
 	text-align: center;
+}
+.info {
+    position: relative;
 }
 
 @media (min-width: 1032px) {

@@ -14,6 +14,7 @@ import { SignupComponent } from './signup/signup.component';
 import { AddPlantComponent } from './addplant/addplant.component';
 // import { ImageContainerComponent } from './addplant/image-container/image-container.component';
 // import { FileUploaderModule } from '@uniprank/ngx-file-uploader';
+import { AuthGuard} from './services/auth-guard.service';
 
 import { FirebaseService } from './services/auth.service';
 import { PlantsService } from './services/plants.service';
@@ -24,6 +25,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { SplashComponent } from './splash/splash.component';
 import { MyGardenComponent } from './my-garden/my-garden.component';
+import { ImageService } from './services/image.service';
 
 import { routes } from './services/routes';
 import { UpdateComponent } from './update/update.component';
@@ -33,7 +35,7 @@ export const firebaseConfig = {
     authDomain: "janies-garden-app.firebaseapp.com",
     databaseURL: "https://janies-garden-app.firebaseio.com",
     projectId: "janies-garden-app",
-    storageBucket: "",
+    storageBucket: "gs://janies-garden-app.appspot.com",
     messagingSenderId: "337108773371"
 };
 
@@ -59,37 +61,16 @@ export const firebaseConfig = {
     AngularFireAuthModule,
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot([
-      {
-         path: 'signin',
-         component: SigninComponent
-      },
-      {
-        path: 'signup',
-        component: SignupComponent
-      },
-      {
-        path: 'splash',
-        component: SplashComponent
-      },      
-      {
-        path: 'addplant',
-        component: AddPlantComponent
-      },
-      { 
-        path: '',
-        redirectTo: '/splash',
-        pathMatch: 'full'
-    }
-    ]),
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes, {useHash:true})
     // AngularFireModule.initializeApp(firebaseConfig)
   ],
   providers: [
     FirebaseService,
     AngularFireAuth,
     PlantsService,
-    MyGardenService
+    MyGardenService,
+    AuthGuard,
+    ImageService
   ],
   bootstrap: [AppComponent]
 })

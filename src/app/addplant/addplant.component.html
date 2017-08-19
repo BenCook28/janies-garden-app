@@ -5,7 +5,7 @@
       <!-- Left-hand side of screen: -->
       <div class="container col-xs-6 leftdiv">
         <div class="form-group">
-          <label for="common-name">Common Name</label>
+          <label for="common-name">Common Name (required)</label>
           <input type="text" class="form-control" id="common-name" name="common-name" [(ngModel)] = "model.common">
         </div>
         <br />
@@ -14,10 +14,17 @@
           <input type="text" class="form-control" id="scientific-name" name="scientific-name" [(ngModel)] = "model.scientific">
         </div>
         <br />
+
         <div class="form-group">
+            <label for="upload-image">Upload Image (required)</label>
+            <img *ngIf='img' [src]='img' />
+            <input #imgInput name="image-upload" type="file" accept="image/png, image/jpeg, image/jpg, image/JPG, image/PNG, image/JPEG" id="image-upload">
+        </div>     
+
+        <!-- <div class="form-group">
           <label for="name">Image URL</label>
           <input type="text" class="form-control" id="image-url" name="image-url" [(ngModel)] = "model.imgurl">
-        </div>
+        </div> -->
         <br />
         <div class="form-group">
           <label for="water-requirements">Water Requirements</label>
@@ -61,12 +68,12 @@
       <!-- Right-hand side of screen: -->
       <div class="container col-xs-6 rightdiv">
         <div class="form-group">
-          <label for="date-planted">Date Planted (MM/DD/YYYY)</label>
+          <label for="date-planted">Date Planted</label>
           <input type="text" class="form-control" id="date-planted" name="date-planted" [(ngModel)] = "model.planted">
         </div>
         <br />
         <div class="form-group">
-          <label for="date-bloomed">Date Bloomed (MM/DD/YYYY)</label>
+          <label for="date-bloomed">Date Bloomed</label>
           <input type="text" class="form-control" id="date-bloomed" name="date-bloomed" [(ngModel)] = "model.bloomed">
         </div>
         <br />
