@@ -14,7 +14,7 @@
           <input type="text" class="form-control" id="scientific-name" name="scientific-name" [(ngModel)] = "model.scientific">
         </div>
         <br />
-        <div class="form-group">
+        <div class="form-group" class="border">
           <label for="upload-image">Upload Image</label>
           <img *ngIf='img' [src]='img' />
           <input #imgInput name="image-upload" type="file" accept="image/png, image/jpeg, image/jpg, image/JPG, image/PNG, image/JPEG" id="image-upload">
